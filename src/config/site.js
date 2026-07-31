@@ -225,7 +225,7 @@ export const siteConfig = {
   contactInfo: {
     email: "info@meiyazilim.com",
     phone: "+90 (530) 832-1395",
-    address: "İzmir, Türkiye",
+    address: "AY CENTER Talaytepe, Laleş Blv., 21070 Kayapınar/Diyarbakır",
   },
   socialLinks: [
     { icon: Globe, href: "https://meiyazilim.com", label: "Website" },
