@@ -23,18 +23,8 @@ export default function Portfolio() {
   const toggleCaseStudy = () => {
     if (!caseStudyOpen) {
       setCaseStudyOpen(true);
-      // Scroll to case study after it opens
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          caseStudyRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-        });
-      });
     } else {
       setCaseStudyOpen(false);
-      // Scroll back to the project card
-      requestAnimationFrame(() => {
-        activeContainerRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-      });
     }
   };
 
@@ -101,7 +91,7 @@ export default function Portfolio() {
                 <Button
                   variant="default"
                   size="lg"
-                  className="w-full sm:w-fit rounded-full bg-black text-white hover:bg-black/90 shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-black/10 hover:border-black/20 hover:-translate-y-0.5 transition-all duration-300 h-14 sm:h-12 group"
+                  className="w-full sm:w-fit rounded-full bg-transparent text-black border border-black/20 hover:border-black hover:bg-black hover:text-white shadow-none hover:shadow-[0_8px_30px_rgb(0,0,0,0.15)] hover:-translate-y-1 transition-all duration-300 h-14 sm:h-12 group"
                   onClick={toggleCaseStudy}
                 >
                   {caseStudyOpen ? (
@@ -111,7 +101,7 @@ export default function Portfolio() {
                     </>
                   ) : (
                     <>
-                      <ExternalLink className="mr-2 size-5 transition-transform duration-300 group-hover:scale-110" />
+                      <ExternalLink className="mr-2 size-5 transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110" />
                       View Case Study
                     </>
                   )}
@@ -223,9 +213,9 @@ export default function Portfolio() {
                     
                     {project.demoUrl ? (
                       <Link href={project.demoUrl} className="w-full sm:w-auto">
-                        <Button variant="default" className="w-full sm:w-auto rounded-full bg-black text-white hover:bg-black/90 shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-black/10 hover:border-black/20 hover:-translate-y-0.5 transition-all duration-300 h-14 sm:h-12 gap-2 group">
+                        <Button variant="default" className="w-full sm:w-auto rounded-full bg-black text-white hover:bg-black/90 shadow-[0_10px_30px_rgba(0,0,0,0.2)] hover:shadow-[0_15px_40px_rgba(0,0,0,0.3)] hover:-translate-y-1 transition-all duration-300 h-14 sm:h-12 gap-2 group">
                           View Live Site
-                          <ArrowUpRight className="size-5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                          <ArrowUpRight className="size-5 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
                         </Button>
                       </Link>
                     ) : (
@@ -253,10 +243,6 @@ export default function Portfolio() {
               onClick={() => {
                 setActiveIndex(i);
                 setCaseStudyOpen(false);
-                // State güncellemesinin bitmesini bekle, sonra scroll yap
-                requestAnimationFrame(() => {
-                  activeContainerRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-                });
               }}
               className={`group relative aspect-[3/4] overflow-hidden rounded-[2rem] transition-[transform,opacity,box-shadow,border] duration-500 text-left ${
                 i === activeIndex
