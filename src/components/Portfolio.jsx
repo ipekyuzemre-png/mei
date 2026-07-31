@@ -236,11 +236,12 @@ export default function Portfolio() {
                   </div>
                 </div>
               </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
-        {/* Thumbnails Grid (Portrait Cards) */}
+      {/* Thumbnails Grid (Portrait Cards) */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
           {siteConfig.projects.map((item, i) => (
             <motion.button
