@@ -101,17 +101,17 @@ export default function Portfolio() {
                 <Button
                   variant="default"
                   size="lg"
-                  className="w-full sm:w-fit rounded-full text-white bg-black hover:bg-black/80 shadow-md h-14 sm:h-12"
+                  className="w-full sm:w-fit rounded-full bg-black text-white hover:bg-black/90 shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-black/10 hover:border-black/20 hover:-translate-y-0.5 transition-all duration-300 h-14 sm:h-12 group"
                   onClick={toggleCaseStudy}
                 >
                   {caseStudyOpen ? (
                     <>
-                      <ChevronUp className="mr-2 size-5" />
+                      <ChevronUp className="mr-2 size-5 transition-transform duration-300 group-hover:-translate-y-1" />
                       Close Case Study
                     </>
                   ) : (
                     <>
-                      <ExternalLink className="mr-2 size-5" />
+                      <ExternalLink className="mr-2 size-5 transition-transform duration-300 group-hover:scale-110" />
                       View Case Study
                     </>
                   )}
@@ -223,13 +223,13 @@ export default function Portfolio() {
                     
                     {project.demoUrl ? (
                       <Link href={project.demoUrl} className="w-full sm:w-auto">
-                        <Button variant="default" className="w-full sm:w-auto rounded-full bg-black text-white hover:bg-black/80 shadow-md h-14 sm:h-12 gap-2">
-                          <ArrowUpRight className="size-5" />
+                        <Button variant="default" className="w-full sm:w-auto rounded-full bg-black text-white hover:bg-black/90 shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-black/10 hover:border-black/20 hover:-translate-y-0.5 transition-all duration-300 h-14 sm:h-12 gap-2 group">
                           View Live Site
+                          <ArrowUpRight className="size-5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                         </Button>
                       </Link>
                     ) : (
-                      <Button variant="default" className="w-full sm:w-auto rounded-full bg-black/40 text-white cursor-not-allowed shadow-md h-14 sm:h-12 gap-2">
+                      <Button variant="default" className="w-full sm:w-auto rounded-full bg-black/5 text-black/40 cursor-not-allowed shadow-none border border-black/5 h-14 sm:h-12 gap-2">
                         Coming Soon
                       </Button>
                     )}
@@ -283,8 +283,8 @@ export default function Portfolio() {
               </div>
 
               {/* View Icon Overlay on Hover */}
-              <div className="absolute top-6 right-6 w-10 h-10 rounded-full bg-white backdrop-blur-md border border-white/20 flex items-center justify-center opacity-0 transform scale-50 transition-all duration-500 lg:group-hover:opacity-100 lg:group-hover:scale-100 shadow-lg">
-                 <Eye className="w-4 h-4 text-black" />
+              <div className="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/20 backdrop-blur-lg border border-white/30 flex items-center justify-center opacity-0 transform scale-50 transition-all duration-500 lg:group-hover:opacity-100 lg:group-hover:scale-100 shadow-[0_8px_32px_rgba(0,0,0,0.12)]">
+                 <Eye className="w-5 h-5 text-white drop-shadow-md" />
               </div>
             </motion.button>
           ))}
