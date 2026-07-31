@@ -223,9 +223,9 @@ export const siteConfig = {
   // FOOTER SECTION
   // ---------------------------------------------------------
   contactInfo: {
-    email: "info@meiyazilim.com",
+    email: "iletisim@meiyazilim.com",
     phone: "+90 (530) 832-1395",
-    address: "AY CENTER Talaytepe, Laleş Blv., 21070 Kayapınar/Diyarbakır",
+    address: "Ay Center- Talaytepe, Laleş Blv., 21070 Kayapınar/Diyarbakır",
   },
   socialLinks: [
     { icon: Globe, href: "https://meiyazilim.com", label: "Website" },
