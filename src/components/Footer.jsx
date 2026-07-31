@@ -17,25 +17,13 @@ import { siteConfig } from "@/config/site";
 
 export default function Footer() {
   return (
-    <footer id="footer" className="relative overflow-hidden z-[60] bg-[#F4F3EE] rounded-t-[3rem] lg:rounded-t-[5rem] -mt-12 lg:-mt-20 shadow-[0_-20px_50px_rgba(0,0,0,0.1)]">
-      {/* 3D Fluid Wave Background (Reusing Hero wave flipped horizontally) */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <Image 
-          src="/hero_bg.webp" 
-          alt="Footer Background" 
-          fill 
-          priority 
-          className="object-cover object-center opacity-40 mix-blend-luminosity -scale-x-100 scale-105" 
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#F4F3EE] via-transparent to-[#F4F3EE]/50" />
-      </div>
-
+    <footer id="footer" className="relative overflow-hidden z-[60] bg-transparent">
       <div className="relative z-10 border-t border-black/5">
         <Container size="xl" className="py-16 sm:py-20 lg:py-24">
           <div className="mb-16 grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-12 lg:gap-10">
             <div className="lg:col-span-4">
               <Magnetic strength={15}>
-                <a href="#hero" className="group mb-8 inline-flex items-center gap-4 w-fit">
+                <a href="/" className="group mb-8 inline-flex items-center gap-4 w-fit">
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl glass-panel-light text-black transition-all group-hover:scale-105 group-hover:shadow-[0_0_30px_rgba(0,0,0,0.1)]">
                     <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full p-1 transition-transform duration-700 group-hover:scale-110">
                       <defs>
@@ -106,7 +94,7 @@ export default function Footer() {
 
             <div className="lg:col-span-2">
               <h4 className="mb-6 font-[Plus_Jakarta_Sans] text-sm font-bold uppercase tracking-widest text-black/90">
-                Contact
+                İletişim
               </h4>
               <div className="space-y-5">
                 <a
@@ -144,15 +132,15 @@ export default function Footer() {
           <div className="flex flex-col items-center justify-between gap-6 text-center sm:flex-row sm:text-left">
             <p className="text-sm font-medium text-black/50">
               © {new Date().getFullYear()}{" "}
-              <span className="font-bold text-black/80">{siteConfig.name}</span>. All rights reserved.
+              <span className="font-bold text-black/80">{siteConfig.name}</span>. Tüm Hakları Saklıdır.
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-8">
               <a href="/privacy" className="text-sm font-medium text-black/50 transition-colors hover:text-black">
-                Privacy
+                Gizlilik
               </a>
               <a href="/terms" className="text-sm font-medium text-black/50 transition-colors hover:text-black">
-                Terms
+                Şartlar
               </a>
             </div>
           </div>

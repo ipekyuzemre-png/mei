@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { siteConfig } from "@/config/site";
 
 /* ── WhatsApp SVG ikonu ── */
 const WhatsAppIcon = () => (
@@ -78,8 +79,8 @@ export default function WhatsAppButton() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [visible]);
 
-  const phoneNumber = "905XXXXXXXXX"; // ← numaranı yaz
-  const message     = encodeURIComponent("Hello! I'm contacting you from your website and would like to get more information.");
+  const phoneNumber = siteConfig.contactInfo.phone.replace(/[^0-9]/g, '');
+  const message     = encodeURIComponent("Merhaba! Web sitenizden ulaşıyorum, detaylı bilgi almak istiyorum.");
   const href        = `https://wa.me/${phoneNumber}?text=${message}`;
 
   return (
@@ -118,7 +119,7 @@ export default function WhatsAppButton() {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
             className="relative flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_4px_24px_rgba(37,211,102,0.45)] transition-shadow hover:shadow-[0_6px_32px_rgba(37,211,102,0.65)]"
-            aria-label="Contact via WhatsApp"
+            aria-label="WhatsApp İletişim"
           >
             <WhatsAppIcon />
             <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-30" />

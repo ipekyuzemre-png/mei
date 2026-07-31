@@ -50,7 +50,7 @@ export const siteConfig = {
   hero: {
     titleLine1: "Güçlü Dijital",
     titleLine2: "Markalar Yaratıyoruz.",
-    description: "Sıradan şablonları unutun. Diyarbakır, Gaziantep ve Mardin bölgesindeki işletmenizi dijitalde zirveye taşıyacak premium web tasarım ve yazılım çözümleri üretiyoruz.",
+    description: "Sıradan şablonları unutun. İşletmenizi ulusal ve global pazarda dijitalde zirveye taşıyacak premium web tasarım ve yazılım çözümleri üretiyoruz.",
     primaryButtonText: "Projelerimiz",
     primaryButtonHref: "#portfolio",
     secondaryButtonText: "Bize Ulaşın",
@@ -81,12 +81,12 @@ export const siteConfig = {
       title: "Özel Yazılım & Otomasyon",
       description: "Avukatlık büroları, klinikler ve KOBİ'ler için iş süreçlerini hızlandıran, güvenli ve tamamen size özel yazılım çözümleri.",
       tags: ["SaaS", "Entegrasyon", "Otomasyon"],
-      image: "/services/custom_software.png",
+      image: "/services/custom_software.webp",
     },
     {
       icon: Search,
       title: "Yerel SEO & Veri Analitiği",
-      description: "Sadece güzel görünmeyen, aynı zamanda sizi Google'da üst sıralara taşıyıp bölgenizde (Diyarbakır, Antep) müşteri sayınızı artıran stratejiler.",
+      description: "Sadece güzel görünmeyen, aynı zamanda sizi Google'da üst sıralara taşıyıp sektörünüzde müşteri sayınızı artıran organik büyüme stratejileri.",
       tags: ["Büyüme", "SEO", "Analiz"],
       image: "/services/seo.webp",
     },
@@ -174,7 +174,7 @@ export const siteConfig = {
     highlight: "Premium Standartlar",
     description: "MEI Yazılım olarak sadece kod yazmıyoruz; markanızın vizyonunu dijitalde hayata geçiriyoruz. Standart şablonlara veda edin.",
   },
-  aboutText: "Estetik kaygımız, derin teknik uzmanlığımız ve farklı olma cesaretimizle her projede sınırları zorluyoruz. Güneydoğu Anadolu (Diyarbakır, Gaziantep, Mardin) bölgesindeki müşterilerimiz bizi sadece bir yazılım firması değil, yenilikçi bir teknoloji ortağı olarak görüyor.",
+  aboutText: "Estetik kaygımız, derin teknik uzmanlığımız ve farklı olma cesaretimizle her projede sınırları zorluyoruz. Türkiye genelindeki ve globaldeki müşterilerimiz bizi sadece bir yazılım firması değil, yenilikçi bir teknoloji ortağı olarak görüyor.",
   visionItems: [
     {
       icon: Target,
@@ -224,12 +224,12 @@ export const siteConfig = {
   // ---------------------------------------------------------
   contactInfo: {
     email: "info@meiyazilim.com",
-    phone: "+90 (555) 123-4567",
-    address: "Diyarbakır / Türkiye",
+    phone: "+90 (530) 832-1395",
+    address: "İzmir, Türkiye",
   },
   socialLinks: [
     { icon: Globe, href: "https://meiyazilim.com", label: "Website" },
-    { icon: MessageCircle, href: "https://wa.me/905551234567", label: "WhatsApp" },
+    { icon: MessageCircle, href: "https://wa.me/905308321395", label: "WhatsApp" },
     { icon: Share2, href: "https://instagram.com", label: "Instagram" },
     { icon: Link2, href: "https://linkedin.com", label: "LinkedIn" },
   ],

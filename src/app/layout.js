@@ -8,16 +8,15 @@ import { siteConfig } from "@/config/site";
 export const metadata = {
   metadataBase: new URL("https://meiyazilim.com"),
   title: {
-    default: `${siteConfig.name} | Diyarbakır, Gaziantep, Mardin Web Tasarım ve Yazılım Ajansı`,
+    default: `${siteConfig.name} | Premium Web Tasarım ve Yazılım Ajansı`,
     template: `%s | ${siteConfig.name}`,
   },
-  description: "Diyarbakır, Gaziantep ve Mardin bölgesinde faaliyet gösteren; kurumsal web tasarım, özel yazılım, e-ticaret ve SEO çözümleri sunan premium dijital ajans.",
+  description: "Türkiye ve global pazarda faaliyet gösteren; kurumsal web tasarım, özel yazılım, e-ticaret ve SEO çözümleri sunan premium dijital ajans.",
   keywords: [
-    "diyarbakır web tasarım",
-    "gaziantep yazılım ajansı",
-    "antep e-ticaret",
-    "mardin web yazılım",
     "kurumsal web tasarım",
+    "özel yazılım ajansı",
+    "premium e-ticaret",
+    "b2b yazılım",
     "SEO hizmeti",
     "dijital pazarlama",
     "yazılım firması"
@@ -27,7 +26,7 @@ export const metadata = {
   },
   openGraph: {
     title: `${siteConfig.name} | Web Tasarım ve Yazılım Ajansı`,
-    description: "Diyarbakır, Gaziantep ve Mardin bölgesinde faaliyet gösteren; kurumsal web tasarım, özel yazılım, e-ticaret ve SEO çözümleri sunan premium dijital ajans.",
+    description: "Türkiye ve global pazarda faaliyet gösteren; kurumsal web tasarım, özel yazılım, e-ticaret ve SEO çözümleri sunan premium dijital ajans.",
     url: "/",
     siteName: siteConfig.name,
     locale: "tr_TR",
@@ -44,7 +43,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: `${siteConfig.name} | Web Tasarım ve Yazılım Ajansı`,
-    description: "Diyarbakır, Gaziantep ve Mardin bölgesinde premium dijital ajans.",
+    description: "Türkiye geneli premium dijital ajans.",
     images: ["/og-image.webp"],
   },
 };

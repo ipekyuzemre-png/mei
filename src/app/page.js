@@ -23,10 +23,6 @@ export default function Home() {
           "telephone": siteConfig.contactInfo.phone,
           "address": {
             "@type": "PostalAddress",
-            "streetAddress": "Merkez",
-            "addressLocality": "Diyarbakır",
-            "addressRegion": "Diyarbakır",
-            "postalCode": "21000",
             "addressCountry": "TR"
           },
           "geo": {
@@ -42,29 +38,26 @@ export default function Home() {
       </Script>
       <Navbar />
       
-      <div className="relative w-full overflow-hidden">
-        {/* Shared Background Image for Hero and Stats */}
-        <div className="absolute inset-0 z-0 pointer-events-none">
-          <Image 
-            src="/hero_bg.webp" 
-            alt="Background" 
-            fill 
-            priority 
-            className="object-cover object-top opacity-60 mix-blend-luminosity scale-105 animate-[pulse_20s_ease-in-out_infinite]" 
-          />
-        </div>
-        
-        <div className="relative z-10">
-          <Hero />
-          <Stats />
-        </div>
+      {/* Global Fixed Background Image for entire page */}
+      <div className="fixed inset-0 z-0 pointer-events-none w-full h-full">
+        <Image 
+          src="/hero_bg.webp" 
+          alt="Background" 
+          fill 
+          priority 
+          className="object-cover object-center opacity-60 mix-blend-luminosity animate-[pulse_20s_ease-in-out_infinite]" 
+        />
       </div>
-
-      <Services />
-      <Portfolio />
-      <About />
-      <Contact />
-      <Footer />
+      
+      <div className="relative z-10 w-full overflow-hidden">
+        <Hero />
+        <Stats />
+        <Services />
+        <Portfolio />
+        <About />
+        <Contact />
+        <Footer />
+      </div>
     </main>
   );
 }

@@ -14,19 +14,7 @@ export default function Portfolio() {
   const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   return (
-    <section id="portfolio" className="relative overflow-hidden py-20 sm:py-28 lg:py-36 z-30 bg-[#F4F3EE] rounded-t-[3rem] lg:rounded-t-[5rem] -mt-12 lg:-mt-20 shadow-[0_-30px_50px_rgba(0,0,0,0.1)] border-t border-black/5">
-      {/* 3D Fluid Wave Background */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <Image 
-          src="/hero_bg.webp" 
-          alt="Portfolio Background" 
-          fill 
-          priority 
-          className="object-cover object-center opacity-30 md:opacity-60 md:mix-blend-luminosity scale-105" 
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#F4F3EE] via-transparent to-[#F4F3EE]/50" />
-      </div>
-
+    <section id="portfolio" className="relative overflow-hidden py-20 sm:py-28 lg:py-36 z-30 bg-transparent">
       <Container size="xl" ref={ref} className="relative z-10">
         <div className="mb-12 sm:mb-20 max-w-3xl">
           <SectionHeader

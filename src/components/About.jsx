@@ -13,20 +13,7 @@ export default function About() {
   const isInView = useInView(ref, { once: true, amount: 0.15 });
 
   return (
-    <section id="about" className="relative py-20 sm:py-28 lg:py-36 z-40 bg-[#D97757] overflow-hidden rounded-t-[3rem] lg:rounded-t-[5rem] -mt-12 lg:-mt-20 shadow-[0_-20px_50px_rgba(0,0,0,0.3)] border-t border-white/10">
-      {/* 3D Fluid Background Image */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <Image 
-          src="/about_bg.webp" 
-          alt="About Background" 
-          fill 
-          priority 
-          className="object-cover object-center opacity-20 md:opacity-40 md:mix-blend-luminosity scale-105" 
-        />
-        {/* Soft overlay to ensure readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/10 mix-blend-overlay" />
-      </div>
-
+    <section id="about" className="relative py-20 sm:py-28 lg:py-36 z-40 bg-transparent overflow-hidden">
       <div className="relative z-10 section-divider mb-14 sm:mb-20 opacity-50" />
 
       <Container ref={ref} className="relative z-10">
@@ -43,8 +30,9 @@ export default function About() {
               description={siteConfig.aboutHeader.description}
               align="left"
               animated={false}
+              theme="light"
             />
-            <p className="mt-8 text-base leading-[1.8] text-white sm:text-lg">
+            <p className="mt-8 text-base leading-[1.8] text-black/80 sm:text-lg">
               {siteConfig.aboutText}
             </p>
           </motion.div>
@@ -59,32 +47,31 @@ export default function About() {
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: 0.15 + i * 0.1 }}
                 >
-                  <div className="group h-full glass-panel rounded-3xl overflow-hidden transition-all duration-500 hover:glass-panel-hover hover:-translate-y-1">
-
-                    {/* Image Banner */}
-                    <div className="relative w-full overflow-hidden bg-black/20" style={{ height: "160px" }}>
-                      <div className="absolute inset-0">
-                        <Image 
-                          src={item.image} 
-                          alt={item.title} 
-                          fill 
-                          className="object-cover object-center opacity-80 transition-transform duration-700 group-hover:scale-105 group-hover:opacity-100 md:mix-blend-luminosity md:hover:mix-blend-normal" 
-                        />
-                      </div>
-                      {/* Alt geçiş */}
-                      <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#D97757]/60 to-transparent z-10" />
-                      {/* İkon - sol üst */}
-                      <div className="absolute top-3 left-3 flex h-10 w-10 items-center justify-center rounded-2xl bg-black/25 backdrop-blur-sm border border-white/20 text-white transition-all duration-500 group-hover:bg-black/35">
-                        <Icon className="size-4" />
-                      </div>
+                  <div className="group relative h-full min-h-[320px] rounded-[2rem] overflow-hidden transition-all duration-500 hover:shadow-[0_20px_60px_rgba(0,0,0,0.2)] hover:-translate-y-2">
+                    {/* Image Background */}
+                    <div className="absolute inset-0 z-0 bg-[#1a1a1a]">
+                      <Image 
+                        src={item.image} 
+                        alt={item.title} 
+                        fill 
+                        className="object-cover object-center opacity-80 transition-transform duration-700 group-hover:scale-110 group-hover:opacity-100" 
+                      />
+                    </div>
+                    
+                    {/* Dark Gradient Overlay for text readability */}
+                    <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/95 via-black/40 to-transparent transition-opacity duration-500 group-hover:opacity-90" />
+                    
+                    {/* Icon - Top Left */}
+                    <div className="absolute top-6 left-6 z-20 flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 text-white transition-all duration-500 group-hover:bg-white group-hover:text-black">
+                      <Icon className="size-5" />
                     </div>
 
-                    {/* İçerik */}
-                    <div className="p-6">
-                      <h4 className="mb-3 font-[Plus_Jakarta_Sans] text-lg font-bold text-white transition-colors">
+                    {/* Content - Bottom */}
+                    <div className="absolute bottom-0 left-0 right-0 z-20 p-8 flex flex-col justify-end">
+                      <h4 className="mb-3 font-[Plus_Jakarta_Sans] text-2xl font-bold text-white">
                         {item.title}
                       </h4>
-                      <p className="text-sm leading-[1.8] text-white/90">
+                      <p className="text-sm leading-[1.8] text-white/80">
                         {item.text}
                       </p>
                     </div>

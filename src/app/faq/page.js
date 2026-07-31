@@ -34,7 +34,7 @@ export default function FAQ() {
     },
     {
       question: "Farklı şehirlerdeki müşterilerle çalışıyor musunuz?",
-      answer: "Kesinlikle! Başta Diyarbakır, Gaziantep ve Mardin olmak üzere Türkiye'nin her yerindeki markalarla çalışıyoruz. Online toplantılar ve proje yönetim araçlarımız sayesinde iletişimimiz her zaman kesintisiz ve şeffaftır."
+      answer: "Kesinlikle! Türkiye'nin her yerindeki ve global pazarındaki markalarla çalışıyoruz. Online toplantılar ve proje yönetim araçlarımız sayesinde iletişimimiz her zaman kesintisiz ve şeffaftır."
     },
     {
       question: "Mevcut web sitemi yenileyebilir misiniz?",

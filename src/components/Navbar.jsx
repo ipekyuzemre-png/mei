@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
-import { Menu, ChevronRight } from "lucide-react";
+import { Menu, ChevronRight, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Container from "@/components/shared/Container";
@@ -13,14 +13,15 @@ import {
   DialogHeader,
   DialogTitle,
   DialogDescription,
+  DialogClose,
 } from "@/components/ui/dialog";
 
 import { siteConfig } from "@/config/site";
 
 const sectionStyles = {
   hero: { bg: "bg-[#F4F3EE] md:bg-[#F4F3EE]/50 border-black/5", theme: "light" },
-  services: { bg: "bg-[#788C5D] md:bg-[#788C5D]/30 border-white/10", theme: "dark" },
-  about: { bg: "bg-[#D97757] md:bg-[#D97757]/30 border-white/10", theme: "dark" },
+  services: { bg: "bg-[#F4F3EE] md:bg-[#F4F3EE]/50 border-black/5", theme: "light" },
+  about: { bg: "bg-[#F4F3EE] md:bg-[#F4F3EE]/50 border-black/5", theme: "light" },
   portfolio: { bg: "bg-[#F4F3EE] md:bg-[#F4F3EE]/50 border-black/5", theme: "light" },
   contact: { bg: "bg-[#F4F3EE] md:bg-[#F4F3EE]/50 border-black/5", theme: "light" },
   footer: { bg: "bg-[#F4F3EE] md:bg-[#F4F3EE]/50 border-black/5", theme: "light" },
@@ -29,7 +30,7 @@ const sectionStyles = {
 function Logo({ compact = false, isLight = false, forceText = false }) {
   return (
     <Magnetic strength={15}>
-      <a href="#hero" className="group flex items-center gap-3">
+      <a href="/" className="group flex items-center gap-3">
         <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl transition-all group-hover:scale-105 group-hover:shadow-lg ${isLight ? 'glass-panel-light text-black' : 'glass-panel text-white'}`}>
           <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full p-1 transition-transform duration-700 group-hover:scale-110">
             <defs>
@@ -48,7 +49,7 @@ function Logo({ compact = false, isLight = false, forceText = false }) {
         {!compact && (
           <div className={forceText ? "flex flex-col" : "hidden min-[380px]:flex flex-col"}>
             <span className={`font-[Plus_Jakarta_Sans] text-sm font-bold tracking-widest transition-colors ${isLight ? 'text-black' : 'text-white'}`}>
-              MEI TEMPLATE
+              MEI YAZILIM
             </span>
           </div>
         )}
@@ -61,6 +62,9 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
+  
+  const waLink = `https://wa.me/${siteConfig.contactInfo.phone.replace(/[^0-9]/g, '')}?text=${encodeURIComponent("Merhaba! Web sitenizden ulaşıyorum, detaylı bilgi almak istiyorum.")}`;
+
   const pathname = usePathname();
   const isHomePage = pathname === "/";
 
@@ -145,8 +149,8 @@ export default function Navbar() {
 
           <div className="flex items-center gap-3">
             <Magnetic strength={20}>
-              <Button variant={isLight && isScrolled ? "default-light" : "default"} className="hidden lg:inline-flex rounded-full transition-colors duration-500" render={<a href="#contact" />}>
-                Get a Quote
+              <Button variant={isLight && isScrolled ? "default-light" : "default"} className="hidden lg:inline-flex rounded-full transition-colors duration-500" render={<a href={waLink} target="_blank" rel="noopener noreferrer" />}>
+                Teklif Al
               </Button>
             </Magnetic>
 
@@ -166,7 +170,12 @@ export default function Navbar() {
       </header>
 
       <Dialog open={mobileOpen} onOpenChange={setMobileOpen}>
-        <DialogContent data-lenis-prevent className={`flex h-[100dvh] max-h-[100dvh] w-full max-w-full flex-col overflow-y-auto overscroll-contain rounded-none border-none ${isLight ? 'bg-[#F4F3EE]' : 'bg-[#1a1a1a]'} sm:max-w-md sm:rounded-2xl sm:h-auto sm:max-h-[90vh]`}>
+        <DialogContent showCloseButton={false} data-lenis-prevent className={`flex h-[100dvh] max-h-[100dvh] w-full max-w-full flex-col overflow-y-auto overscroll-contain rounded-none border-none ${isLight ? 'bg-[#F4F3EE] text-black' : 'bg-[#1a1a1a] text-white'} sm:max-w-md sm:rounded-2xl sm:h-auto sm:max-h-[90vh]`}>
+          <DialogClose className={`absolute right-5 top-5 flex h-12 w-12 items-center justify-center rounded-full border backdrop-blur-md transition-all duration-500 hover:scale-110 hover:rotate-90 active:scale-95 focus:outline-none z-50 ${isLight ? 'bg-black/5 border-black/10 text-black/60 hover:bg-black/10 hover:text-black' : 'bg-white/10 border-white/20 text-white/70 hover:bg-white/20 hover:text-white'}`}>
+            <X className="h-6 w-6" strokeWidth={1.5} />
+            <span className="sr-only">Kapat</span>
+          </DialogClose>
+
           <DialogHeader className="text-left">
             <DialogTitle className="flex items-center">
               <Logo isLight={isLight} forceText={true} />
@@ -207,8 +216,8 @@ export default function Navbar() {
             })}
           </nav>
 
-          <Button variant={isLight ? "default-light" : "default"} size="lg" className="w-full rounded-full transition-colors" render={<a href="#contact" onClick={() => setMobileOpen(false)} />}>
-            Get a Quote
+          <Button variant={isLight ? "default-light" : "default"} size="lg" className="w-full rounded-full transition-colors" render={<a href={waLink} target="_blank" rel="noopener noreferrer" onClick={() => setMobileOpen(false)} />}>
+            Teklif Al
             <ChevronRight className="ml-1 size-5" />
           </Button>
         </DialogContent>

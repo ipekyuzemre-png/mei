@@ -50,7 +50,19 @@ export default async function BlogPost({ params }) {
   }
 
   return (
-    <div className="bg-[#F4F3EE] dark:bg-[#1a1a1a] min-h-screen transition-colors duration-500">
+    <div className="bg-[#F4F3EE] min-h-screen relative overflow-hidden">
+      {/* Footer-like Wave Background */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <Image 
+          src="/hero_bg.webp" 
+          alt="Background" 
+          fill 
+          priority 
+          className="object-cover object-center opacity-40 mix-blend-luminosity -scale-x-100 scale-105" 
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#F4F3EE] via-transparent to-[#F4F3EE]/50" />
+      </div>
+
       <Script id={`json-ld-article-${slug}`} type="application/ld+json" strategy="beforeInteractive">
         {JSON.stringify({
           "@context": "https://schema.org",
@@ -74,11 +86,11 @@ export default async function BlogPost({ params }) {
       </Script>
       <Navbar />
       
-      <main className="pt-32 pb-24 lg:pt-40 lg:pb-32">
+      <main className="relative z-10 pt-32 pb-24 lg:pt-40 lg:pb-32">
         <Container size="md">
           <Link 
             href="/blog" 
-            className="inline-flex items-center text-sm font-semibold text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-colors mb-12"
+            className="inline-flex items-center text-sm font-semibold text-black/60 hover:text-black transition-colors mb-12"
           >
             <ArrowLeft className="mr-2 size-4" />
             Blog'a Dön
@@ -86,11 +98,11 @@ export default async function BlogPost({ params }) {
 
           <article>
             <header className="mb-12">
-              <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-black dark:text-white mb-6 leading-tight">
+              <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-black mb-6 leading-tight">
                 {post.title}
               </h1>
               
-              <div className="flex flex-wrap items-center gap-6 text-sm font-semibold text-black/50 dark:text-white/50 uppercase tracking-wider">
+              <div className="flex flex-wrap items-center gap-6 text-sm font-semibold text-black/50 uppercase tracking-wider">
                 <div className="flex items-center gap-2">
                   <Calendar className="size-4" />
                   {post.date}
@@ -102,7 +114,7 @@ export default async function BlogPost({ params }) {
               </div>
             </header>
 
-            <div className="relative w-full aspect-video rounded-3xl overflow-hidden mb-16 border border-black/5 dark:border-white/5 shadow-2xl">
+            <div className="relative w-full aspect-video rounded-3xl overflow-hidden mb-16 border border-black/5 shadow-2xl">
               <Image
                 src={post.image}
                 alt={post.title}
@@ -113,7 +125,7 @@ export default async function BlogPost({ params }) {
             </div>
 
             <div 
-              className="prose prose-lg dark:prose-invert max-w-none text-black/80 dark:text-white/80"
+              className="prose prose-lg max-w-none text-black/80"
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
           </article>

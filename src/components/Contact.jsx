@@ -44,24 +44,24 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
+    // WhatsApp'a yönlendirme
+    const phoneNumber = siteConfig.contactInfo.phone.replace(/[^0-9]/g, '');
+    let text = `*Yeni Teklif Talebi*\n\n`;
+    text += `*Ad Soyad:* ${formData.name}\n`;
+    if (formData.company) text += `*Firma:* ${formData.company}\n`;
+    if (formData.service) text += `*İstenen Hizmet:* ${formData.service}\n`;
+    text += `*Proje Detayı:* ${formData.details}`;
+    
+    const waUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
+    window.open(waUrl, '_blank');
+
     setSuccessOpen(true);
     setFormData({ name: "", company: "", service: "", details: "" });
   };
 
   return (
-    <section id="contact" className="relative py-20 sm:py-28 lg:py-36 z-50 overflow-hidden bg-[#F4F3EE] rounded-t-[3rem] lg:rounded-t-[5rem] -mt-12 lg:-mt-20 shadow-[0_-20px_50px_rgba(0,0,0,0.2)]">
-      {/* 3D Fluid Wave Background (Reusing Hero wave but flipped/rotated for a unique look) */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <Image 
-          src="/hero_bg.webp" 
-          alt="Contact Background" 
-          fill 
-          priority 
-          className="object-cover object-center opacity-60 mix-blend-luminosity rotate-180 scale-105" 
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#F4F3EE] via-transparent to-[#F4F3EE]/50" />
-      </div>
-
+    <section id="contact" className="relative py-20 sm:py-28 lg:py-36 z-50 overflow-hidden bg-transparent">
       <Container size="md" ref={ref} className="relative z-10">
         <div className="mb-14 sm:mb-20">
           <SectionHeader
@@ -83,31 +83,31 @@ export default function Contact() {
             <form onSubmit={handleSubmit} className="space-y-10 sm:space-y-12">
               <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
                 <div>
-                  <FieldLabel icon={User}>Full Name</FieldLabel>
+                  <FieldLabel icon={User}>Ad Soyad</FieldLabel>
                   <Input
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    placeholder="Full Name"
+                    placeholder="Ad Soyad"
                     className="h-14 rounded-2xl border-black/5 bg-white/50 px-5 text-base text-black shadow-inner backdrop-blur-sm placeholder:text-black/30 focus-visible:ring-black/20"
                   />
                 </div>
 
                 <div>
-                  <FieldLabel icon={Building2}>Company</FieldLabel>
+                  <FieldLabel icon={Building2}>Firma</FieldLabel>
                   <Input
                     name="company"
                     value={formData.company}
                     onChange={handleChange}
-                    placeholder="Company Name (Optional)"
+                    placeholder="Firma Adı (Opsiyonel)"
                     className="h-14 rounded-2xl border-black/5 bg-white/50 px-5 text-base text-black shadow-inner backdrop-blur-sm placeholder:text-black/30 focus-visible:ring-black/20"
                   />
                 </div>
               </div>
 
               <div>
-                <FieldLabel icon={Layers}>Service Required</FieldLabel>
+                <FieldLabel icon={Layers}>İhtiyaç Duyulan Hizmet</FieldLabel>
                 <div className="grid grid-cols-1 gap-4 min-[480px]:grid-cols-2 lg:grid-cols-4">
                   {siteConfig.serviceOptions.map((opt) => (
                     <button
@@ -128,25 +128,25 @@ export default function Contact() {
               </div>
 
               <div>
-                <FieldLabel icon={FileText}>Project Details</FieldLabel>
+                <FieldLabel icon={FileText}>Proje Detayları</FieldLabel>
                 <textarea
                   name="details"
                   value={formData.details}
                   onChange={handleChange}
                   required
                   rows={6}
-                  placeholder="Tell us briefly about your project..."
+                  placeholder="Projenizden kısaca bahsedin..."
                   className="w-full resize-none rounded-2xl border border-black/5 bg-white/50 px-5 py-4 text-base text-black shadow-inner backdrop-blur-sm outline-none transition-all placeholder:text-black/30 focus-visible:border-black/30 focus-visible:ring-4 focus-visible:ring-black/10"
                 />
               </div>
 
               <Button variant="default-light" size="lg" type="submit" className="w-full rounded-2xl text-lg h-16 shadow-[0_20px_40px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.15)] transition-all duration-300">
                 <Send className="mr-2 size-5" />
-                Request Free Quote
+                Ücretsiz Teklif Al
               </Button>
 
               <p className="text-center text-[10px] sm:text-xs font-semibold tracking-widest uppercase text-black/30">
-                Your data is secure. We will get back to you within 24 hours.
+                Bilgileriniz güvende. Size 24 saat içinde dönüş yapacağız.
               </p>
             </form>
           </div>
@@ -160,14 +160,14 @@ export default function Contact() {
               <CheckCircle className="size-12" />
             </div>
             <DialogTitle className="font-[Plus_Jakarta_Sans] text-3xl font-bold text-white mb-2">
-              Request Received!
+              Talebiniz Alındı!
             </DialogTitle>
             <DialogDescription className="text-base text-white/50 leading-relaxed">
-              Thank you for your interest. Our expert team will contact you shortly.
+              İlginiz için teşekkürler. Uzman ekibimiz en kısa sürede sizinle iletişime geçecektir.
             </DialogDescription>
           </DialogHeader>
           <Button variant="default" size="lg" className="mt-6 w-full rounded-2xl" onClick={() => setSuccessOpen(false)}>
-            Got it
+            Tamam
           </Button>
         </DialogContent>
       </Dialog>
