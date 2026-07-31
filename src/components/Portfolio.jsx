@@ -13,7 +13,6 @@ import { siteConfig } from "@/config/site";
 export default function Portfolio() {
   const ref = useRef(null);
   const activeContainerRef = useRef(null);
-  const activeContainerRef = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.1 });
   const [activeIndex, setActiveIndex] = useState(0);
 
