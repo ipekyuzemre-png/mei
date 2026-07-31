@@ -6,30 +6,31 @@ import WhatsAppButton from "@/components/shared/WhatsAppButton";
 import { siteConfig } from "@/config/site";
 
 export const metadata = {
-  title: `${siteConfig.name} | Premium Digital Agency`,
-  description: siteConfig.description,
+  title: `${siteConfig.name} | Diyarbakır, Gaziantep, Mardin Web Tasarım ve Yazılım Ajansı`,
+  description: "Diyarbakır, Gaziantep ve Mardin bölgesinde faaliyet gösteren; kurumsal web tasarım, özel yazılım, e-ticaret ve SEO çözümleri sunan premium dijital ajans.",
   keywords: [
-    "web design",
-    "software agency",
-    "premium digital agency",
-    "mobile app",
-    "SEO",
-    "corporate identity",
-    "mei template",
+    "diyarbakır web tasarım",
+    "gaziantep yazılım ajansı",
+    "antep e-ticaret",
+    "mardin web yazılım",
+    "kurumsal web tasarım",
+    "SEO hizmeti",
+    "dijital pazarlama",
+    "yazılım firması"
   ],
   openGraph: {
-    title: `${siteConfig.name} | Premium Digital Agency`,
-    description: siteConfig.description,
+    title: `${siteConfig.name} | Web Tasarım ve Yazılım Ajansı`,
+    description: "Diyarbakır, Gaziantep ve Mardin bölgesinde faaliyet gösteren; kurumsal web tasarım, özel yazılım, e-ticaret ve SEO çözümleri sunan premium dijital ajans.",
     url: "https://meiyazilim.com",
     siteName: siteConfig.name,
-    locale: "en_US",
+    locale: "tr_TR",
     type: "website",
   },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="dark" suppressHydrationWarning>
+    <html lang="tr" className="dark" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

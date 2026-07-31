@@ -3,6 +3,7 @@
 import { useEffect, useState, useRef } from "react";
 import { Menu, ChevronRight } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import Container from "@/components/shared/Container";
 import Magnetic from "@/components/shared/Magnetic";
 import { Button } from "@/components/ui/button";
@@ -17,12 +18,12 @@ import {
 import { siteConfig } from "@/config/site";
 
 const sectionStyles = {
-  hero: { bg: "bg-[#F4F3EE]/50 border-black/5", theme: "light" },
-  services: { bg: "bg-[#788C5D]/30 border-white/10", theme: "dark" },
-  about: { bg: "bg-[#D97757]/30 border-white/10", theme: "dark" },
-  portfolio: { bg: "bg-[#F4F3EE]/50 border-black/5", theme: "light" },
-  contact: { bg: "bg-[#F4F3EE]/50 border-black/5", theme: "light" },
-  footer: { bg: "bg-[#F4F3EE]/50 border-black/5", theme: "light" },
+  hero: { bg: "bg-[#F4F3EE] md:bg-[#F4F3EE]/50 border-black/5", theme: "light" },
+  services: { bg: "bg-[#788C5D] md:bg-[#788C5D]/30 border-white/10", theme: "dark" },
+  about: { bg: "bg-[#D97757] md:bg-[#D97757]/30 border-white/10", theme: "dark" },
+  portfolio: { bg: "bg-[#F4F3EE] md:bg-[#F4F3EE]/50 border-black/5", theme: "light" },
+  contact: { bg: "bg-[#F4F3EE] md:bg-[#F4F3EE]/50 border-black/5", theme: "light" },
+  footer: { bg: "bg-[#F4F3EE] md:bg-[#F4F3EE]/50 border-black/5", theme: "light" },
 };
 
 function Logo({ compact = false, isLight = false, forceText = false }) {
@@ -60,6 +61,8 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
 
   useEffect(() => {
     // 1. Scroll listener for just the background change
@@ -102,7 +105,7 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed inset-x-0 top-0 z-[100] transition-all duration-500 backdrop-blur-md saturate-150 ${
+        className={`fixed inset-x-0 top-0 z-[100] transition-all duration-500 md:backdrop-blur-md saturate-150 ${
           isScrolled
             ? `border-b ${currentStyle.bg} py-3 shadow-[0_4px_30px_rgba(0,0,0,0.1)]`
             : "border-b border-transparent bg-transparent py-5 shadow-none"
@@ -112,15 +115,32 @@ export default function Navbar() {
           <Logo isLight={isLight && isScrolled} />
 
           <nav className={`hidden items-center gap-2 rounded-full border px-2 py-1 backdrop-blur-md lg:flex transition-colors duration-500 ${isLight && isScrolled ? 'border-black/5 bg-black/[0.02]' : 'border-white/20 bg-white/[0.05]'}`} aria-label="Main menu">
-            {siteConfig.navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className={`rounded-full px-4 py-2 text-sm font-medium transition-colors duration-500 ${isLight && isScrolled ? 'text-black/80 hover:bg-black/10 hover:text-black' : 'text-white hover:bg-white/20 hover:text-white'}`}
-              >
-                {link.name}
-              </a>
-            ))}
+            {siteConfig.navLinks.map((link) => {
+              const isHashLink = link.href.includes('#');
+              const href = (isHomePage && isHashLink) ? link.href.substring(link.href.indexOf('#')) : link.href;
+              
+              if (isHomePage && isHashLink) {
+                return (
+                  <a
+                    key={link.name}
+                    href={href}
+                    className={`rounded-full px-4 py-2 text-sm font-medium transition-colors duration-500 ${isLight && isScrolled ? 'text-black/80 hover:bg-black/10 hover:text-black' : 'text-white hover:bg-white/20 hover:text-white'}`}
+                  >
+                    {link.name}
+                  </a>
+                );
+              }
+
+              return (
+                <Link
+                  key={link.name}
+                  href={href}
+                  className={`rounded-full px-4 py-2 text-sm font-medium transition-colors duration-500 ${isLight && isScrolled ? 'text-black/80 hover:bg-black/10 hover:text-black' : 'text-white hover:bg-white/20 hover:text-white'}`}
+                >
+                  {link.name}
+                </Link>
+              );
+            })}
           </nav>
 
           <div className="flex items-center gap-3">
@@ -157,16 +177,34 @@ export default function Navbar() {
           </DialogHeader>
 
           <nav className="flex flex-1 flex-col justify-center gap-2 py-8" aria-label="Mobile menu">
-            {siteConfig.navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                onClick={() => setMobileOpen(false)}
-                className={`rounded-2xl px-4 py-4 font-[Plus_Jakarta_Sans] text-2xl font-bold transition-colors hover:pl-6 sm:text-3xl ${isLight ? 'text-black/60 hover:bg-black/5 hover:text-black' : 'text-white/60 hover:bg-white/5 hover:text-white'}`}
-              >
-                {link.name}
-              </Link>
-            ))}
+            {siteConfig.navLinks.map((link) => {
+              const isHashLink = link.href.includes('#');
+              const href = (isHomePage && isHashLink) ? link.href.substring(link.href.indexOf('#')) : link.href;
+
+              if (isHomePage && isHashLink) {
+                return (
+                  <a
+                    key={link.name}
+                    href={href}
+                    onClick={() => setMobileOpen(false)}
+                    className={`rounded-2xl px-4 py-4 font-[Plus_Jakarta_Sans] text-2xl font-bold transition-colors hover:pl-6 sm:text-3xl ${isLight ? 'text-black/60 hover:bg-black/5 hover:text-black' : 'text-white/60 hover:bg-white/5 hover:text-white'}`}
+                  >
+                    {link.name}
+                  </a>
+                );
+              }
+
+              return (
+                <Link
+                  key={link.name}
+                  href={href}
+                  onClick={() => setMobileOpen(false)}
+                  className={`rounded-2xl px-4 py-4 font-[Plus_Jakarta_Sans] text-2xl font-bold transition-colors hover:pl-6 sm:text-3xl ${isLight ? 'text-black/60 hover:bg-black/5 hover:text-black' : 'text-white/60 hover:bg-white/5 hover:text-white'}`}
+                >
+                  {link.name}
+                </Link>
+              );
+            })}
           </nav>
 
           <Button variant={isLight ? "default-light" : "default"} size="lg" className="w-full rounded-full transition-colors" render={<a href="#contact" onClick={() => setMobileOpen(false)} />}>

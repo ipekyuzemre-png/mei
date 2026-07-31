@@ -21,7 +21,7 @@ export default function About() {
           alt="About Background" 
           fill 
           priority 
-          className="object-cover object-center opacity-40 mix-blend-luminosity scale-105" 
+          className="object-cover object-center opacity-20 md:opacity-40 md:mix-blend-luminosity scale-105" 
         />
         {/* Soft overlay to ensure readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/10 mix-blend-overlay" />
@@ -32,8 +32,8 @@ export default function About() {
       <Container ref={ref} className="relative z-10">
         <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20 xl:gap-24">
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <SectionHeader
@@ -68,7 +68,7 @@ export default function About() {
                           src={item.image} 
                           alt={item.title} 
                           fill 
-                          className="object-cover object-center opacity-80 transition-transform duration-700 group-hover:scale-105 group-hover:opacity-100 mix-blend-luminosity hover:mix-blend-normal" 
+                          className="object-cover object-center opacity-80 transition-transform duration-700 group-hover:scale-105 group-hover:opacity-100 md:mix-blend-luminosity md:hover:mix-blend-normal" 
                         />
                       </div>
                       {/* Alt geçiş */}

@@ -1,166 +1,89 @@
 "use client";
 
-import { useRef, useState } from "react";
-import { motion, useInView, AnimatePresence } from "framer-motion";
-import { ExternalLink, Eye, ChevronUp, ArrowUpRight } from "lucide-react";
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import Container from "@/components/shared/Container";
 import SectionHeader from "@/components/shared/SectionHeader";
-import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
 
 export default function Portfolio() {
   const ref = useRef(null);
-  const activeContainerRef = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.1 });
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  const project = siteConfig.projects[activeIndex];
 
   return (
     <section id="portfolio" className="relative overflow-hidden py-20 sm:py-28 lg:py-36 z-30 bg-[#F4F3EE] rounded-t-[3rem] lg:rounded-t-[5rem] -mt-12 lg:-mt-20 shadow-[0_-30px_50px_rgba(0,0,0,0.1)] border-t border-black/5">
-      {/* 3D Fluid Wave Background (Matching Hero) */}
+      {/* 3D Fluid Wave Background */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <Image 
           src="/hero_bg.webp" 
           alt="Portfolio Background" 
           fill 
           priority 
-          className="object-cover object-center opacity-60 mix-blend-luminosity scale-105" 
+          className="object-cover object-center opacity-30 md:opacity-60 md:mix-blend-luminosity scale-105" 
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#F4F3EE] via-transparent to-[#F4F3EE]/50" />
       </div>
 
       <Container size="xl" ref={ref} className="relative z-10">
-        <div className="mb-14 sm:mb-20">
+        <div className="mb-12 sm:mb-20 max-w-3xl">
           <SectionHeader
             badge={siteConfig.portfolioHeader.badge}
             title={siteConfig.portfolioHeader.title}
             highlight={siteConfig.portfolioHeader.highlight}
-            description={siteConfig.portfolioHeader.description}
             inView={isInView}
             theme="light"
           />
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mt-6 text-lg sm:text-xl text-black/60 font-medium leading-relaxed"
+          >
+            Sadece bir web sitesi değil, markanızın dijital dünyadaki prestijini yansıtan pürüzsüz sanat eserleri üretiyoruz.
+          </motion.p>
         </div>
 
-        <motion.div
-          ref={activeContainerRef}
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.15 }}
-          className="mb-8 sm:mb-12 scroll-mt-24 lg:scroll-mt-32"
-        >
-          {/* Active Project Glass Container */}
-          <div className="glass-panel-light overflow-hidden rounded-[2rem] sm:rounded-[2.5rem] border border-black/10 bg-white/10 shadow-[0_30px_80px_rgba(0,0,0,0.1)] backdrop-blur-md transition-colors duration-700">
-            <div className="grid lg:grid-cols-12 gap-0 overflow-hidden bg-transparent flex-col-reverse">
-              
-              {/* Text Side */}
-              <div className="flex flex-col justify-center px-6 pb-12 pt-6 sm:px-12 sm:py-16 lg:col-span-5 lg:px-16 lg:py-20 relative z-10 order-2 lg:order-1">
-                <span className="mb-3 sm:mb-4 text-xs font-bold uppercase tracking-widest text-black/50">
-                  {project.category}
-                </span>
-                <h3 className="mb-6 font-[Plus_Jakarta_Sans] text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">
-                  {project.title}
-                </h3>
-                <p className="mb-10 text-base leading-[1.8] text-black/70 sm:text-lg">
-                  {project.description}
-                </p>
-
-                <div className="mb-10 sm:mb-12 flex flex-wrap gap-2 sm:gap-3">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full border border-black/10 bg-white/50 px-3 py-1 sm:px-4 sm:py-1.5 text-[10px] sm:text-xs font-semibold tracking-wide text-black/80"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
-                {project.demoUrl ? (
-                  <Link href={project.demoUrl} className="w-full sm:w-auto">
-                    <Button variant="default" size="lg" className="w-full sm:w-fit rounded-full bg-transparent text-black border border-black/20 hover:border-black hover:bg-black hover:text-white shadow-none hover:shadow-[0_8px_30px_rgb(0,0,0,0.15)] hover:-translate-y-1 transition-all duration-300 h-14 sm:h-12 gap-2 group">
-                      View Live Site
-                      <ArrowUpRight className="size-5 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
-                    </Button>
-                  </Link>
-                ) : (
-                  <Button variant="default" size="lg" className="w-full sm:w-fit rounded-full bg-black/5 text-black/40 cursor-not-allowed shadow-none border border-black/5 h-14 sm:h-12 gap-2">
-                    Coming Soon
-                  </Button>
-                )}
-              </div>
-
-              {/* CSS Device Mockup for Image Side */}
-              <div className="relative overflow-hidden lg:col-span-7 bg-transparent px-6 pt-10 pb-4 sm:p-10 lg:p-16 flex items-center justify-center order-1 lg:order-2">
-                <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent mix-blend-overlay pointer-events-none" />
-                
-                {/* Macbook-style inner frame */}
-                <div className="relative w-full aspect-[16/10] max-w-3xl rounded-[1rem] sm:rounded-[1.5rem] border border-white/10 bg-black shadow-2xl overflow-hidden transition-transform duration-700 lg:hover:scale-[1.02]">
-                   <div className="absolute top-0 left-0 w-full h-6 sm:h-8 bg-[#1A1A1A] border-b border-white/10 z-20 flex items-center px-3 sm:px-4 gap-1.5">
-                      <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-white/20" />
-                      <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-white/20" />
-                      <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-white/20" />
-                   </div>
-                   <div className="absolute top-6 sm:top-8 left-0 right-0 bottom-0">
-                      <Image
-                        src={project.image}
-                        alt={project.title}
-                        fill
-                        className="object-cover object-top"
-                        sizes="(max-width: 1024px) 100vw, 60vw"
-                        priority
-                      />
-                   </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Thumbnails Grid (Portrait Cards) */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
+        {/* Thumbnails Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {siteConfig.projects.map((item, i) => (
-            <motion.button
+            <motion.div
               key={item.title}
-              type="button"
-              initial={{ opacity: 0, y: 24 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 + i * 0.1 }}
-              onClick={() => {
-                setActiveIndex(i);
-              }}
-              className={`group relative aspect-[3/4] overflow-hidden rounded-[2rem] transition-[transform,opacity,box-shadow,border] duration-500 text-left ${
-                i === activeIndex
-                  ? "ring-2 ring-black/50 ring-offset-4 ring-offset-[#F4F3EE] shadow-[0_0_40px_rgba(0,0,0,0.15)] scale-[1.03]"
-                  : "opacity-60 lg:hover:opacity-100 lg:hover:scale-[1.02]"
-              }`}
+              className="group relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-lg hover:shadow-2xl transition-all duration-500 text-left bg-black"
             >
-              <Image
-                src={item.image}
-                alt={item.title}
-                fill
-                className="object-cover object-center transition-transform duration-1000 lg:group-hover:scale-110"
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-              />
-              <div className="absolute inset-0 bg-black/20 transition-colors duration-500 lg:group-hover:bg-black/10" />
-              
-              <div className="absolute inset-0 p-4 sm:p-6 flex flex-col justify-end bg-gradient-to-t from-[#0F1110]/90 via-[#0F1110]/40 to-transparent">
-                <span className="text-[10px] sm:text-xs font-bold text-white/70 uppercase tracking-wider mb-1 sm:mb-2 transform translate-y-4 opacity-0 transition-all duration-500 lg:group-hover:translate-y-0 lg:group-hover:opacity-100">
-                  {item.category}
-                </span>
-                <p className="text-sm sm:text-lg font-[Plus_Jakarta_Sans] font-bold text-white leading-tight">
-                  {item.title}
-                </p>
-              </div>
+              <Link href={item.demoUrl || "#"} className="block w-full h-full">
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  className="object-cover object-center opacity-80 transition-transform duration-1000 group-hover:scale-110 group-hover:opacity-60"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent transition-opacity duration-500" />
+                
+                <div className="absolute inset-0 p-6 sm:p-8 flex flex-col justify-end">
+                  <span className="text-xs font-bold text-white/70 uppercase tracking-wider mb-2 transform translate-y-4 transition-transform duration-500 group-hover:translate-y-0">
+                    {item.category}
+                  </span>
+                  <p className="text-2xl font-[Plus_Jakarta_Sans] font-bold text-white leading-tight transform translate-y-4 transition-transform duration-500 group-hover:translate-y-0">
+                    {item.title}
+                  </p>
+                </div>
 
-              {/* View Icon Overlay on Hover */}
-              <div className="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/20 backdrop-blur-lg border border-white/30 flex items-center justify-center opacity-0 transform scale-50 transition-all duration-500 lg:group-hover:opacity-100 lg:group-hover:scale-100 shadow-[0_8px_32px_rgba(0,0,0,0.12)]">
-                 <Eye className="w-5 h-5 text-white drop-shadow-md" />
-              </div>
-            </motion.button>
+                {/* View Button Overlay on Hover */}
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 transform translate-y-8 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
+                  <div className="rounded-full bg-white text-black px-6 py-3 text-sm font-bold shadow-[0_8px_32px_rgba(0,0,0,0.2)] flex items-center gap-2">
+                    Projeyi İncele
+                    <ArrowUpRight className="w-4 h-4" />
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
           ))}
         </div>
       </Container>
