@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { blogPosts } from "@/data/blog";
 import { notFound } from "next/navigation";
-
+import Script from "next/script";
 export async function generateStaticParams() {
   return blogPosts.map((post) => ({
     slug: post.slug,
@@ -21,6 +21,23 @@ export async function generateMetadata({ params }) {
   return {
     title: `${post.title} | MEI Yazılım`,
     description: post.excerpt,
+    alternates: {
+      canonical: `/blog/${slug}`,
+    },
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      url: `/blog/${slug}`,
+      type: "article",
+      images: [
+        {
+          url: post.image,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        }
+      ]
+    }
   };
 }
 
@@ -34,6 +51,27 @@ export default async function BlogPost({ params }) {
 
   return (
     <div className="bg-[#F4F3EE] dark:bg-[#1a1a1a] min-h-screen transition-colors duration-500">
+      <Script id={`json-ld-article-${slug}`} type="application/ld+json" strategy="beforeInteractive">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": post.title,
+          "image": `https://meiyazilim.com${post.image}`,
+          "author": {
+            "@type": "Organization",
+            "name": "MEI Yazılım"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "MEI Yazılım",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://meiyazilim.com/og-image.webp"
+            }
+          },
+          "description": post.excerpt
+        })}
+      </Script>
       <Navbar />
       
       <main className="pt-32 pb-24 lg:pt-40 lg:pb-32">

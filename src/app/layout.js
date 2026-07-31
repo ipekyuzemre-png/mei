@@ -6,7 +6,11 @@ import WhatsAppButton from "@/components/shared/WhatsAppButton";
 import { siteConfig } from "@/config/site";
 
 export const metadata = {
-  title: `${siteConfig.name} | Diyarbakır, Gaziantep, Mardin Web Tasarım ve Yazılım Ajansı`,
+  metadataBase: new URL("https://meiyazilim.com"),
+  title: {
+    default: `${siteConfig.name} | Diyarbakır, Gaziantep, Mardin Web Tasarım ve Yazılım Ajansı`,
+    template: `%s | ${siteConfig.name}`,
+  },
   description: "Diyarbakır, Gaziantep ve Mardin bölgesinde faaliyet gösteren; kurumsal web tasarım, özel yazılım, e-ticaret ve SEO çözümleri sunan premium dijital ajans.",
   keywords: [
     "diyarbakır web tasarım",
@@ -18,13 +22,30 @@ export const metadata = {
     "dijital pazarlama",
     "yazılım firması"
   ],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: `${siteConfig.name} | Web Tasarım ve Yazılım Ajansı`,
     description: "Diyarbakır, Gaziantep ve Mardin bölgesinde faaliyet gösteren; kurumsal web tasarım, özel yazılım, e-ticaret ve SEO çözümleri sunan premium dijital ajans.",
-    url: "https://meiyazilim.com",
+    url: "/",
     siteName: siteConfig.name,
     locale: "tr_TR",
     type: "website",
+    images: [
+      {
+        url: "/og-image.webp",
+        width: 1200,
+        height: 630,
+        alt: `${siteConfig.name} Logo`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${siteConfig.name} | Web Tasarım ve Yazılım Ajansı`,
+    description: "Diyarbakır, Gaziantep ve Mardin bölgesinde premium dijital ajans.",
+    images: ["/og-image.webp"],
   },
 };
 
