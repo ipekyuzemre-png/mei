@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, AnimatePresence } from "framer-motion";
 import { ExternalLink, Eye, ChevronUp, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -24,15 +24,17 @@ export default function Portfolio() {
     if (!caseStudyOpen) {
       setCaseStudyOpen(true);
       // Scroll to case study after it opens
-      setTimeout(() => {
-        caseStudyRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-      }, 100);
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          caseStudyRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+      });
     } else {
       setCaseStudyOpen(false);
       // Scroll back to the project card
-      setTimeout(() => {
+      requestAnimationFrame(() => {
         activeContainerRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-      }, 50);
+      });
     }
   };
 
@@ -144,14 +146,16 @@ export default function Portfolio() {
         </motion.div>
 
         {/* Inline Case Study - Expands Below Active Project */}
-        <div
-          ref={caseStudyRef}
-          className={`transition-all duration-500 ease-in-out overflow-hidden scroll-mt-24 lg:scroll-mt-32 ${
-            caseStudyOpen
-              ? "max-h-[2000px] opacity-100 mb-8"
-              : "max-h-0 opacity-0 mb-0"
-          }`}
-        >
+        <AnimatePresence>
+          {caseStudyOpen && (
+            <motion.div
+              ref={caseStudyRef}
+              initial={{ height: 0, opacity: 0, marginBottom: 0 }}
+              animate={{ height: "auto", opacity: 1, marginBottom: "2rem" }}
+              exit={{ height: 0, opacity: 0, marginBottom: 0 }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+              className="overflow-hidden scroll-mt-24 lg:scroll-mt-32"
+            >
           <div className="pt-4">
               <div className="rounded-[2rem] sm:rounded-[2.5rem] border border-black/10 bg-white/40 backdrop-blur-md shadow-[0_20px_60px_rgba(0,0,0,0.08)] overflow-hidden">
                 
@@ -232,8 +236,9 @@ export default function Portfolio() {
                   </div>
                 </div>
               </div>
-          </div>
-        </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         {/* Thumbnails Grid (Portrait Cards) */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
@@ -247,10 +252,10 @@ export default function Portfolio() {
               onClick={() => {
                 setActiveIndex(i);
                 setCaseStudyOpen(false);
-                // State güncellemesinin bitmesini ve React'in render etmesini bekle, sonra scroll yap
-                setTimeout(() => {
+                // State güncellemesinin bitmesini bekle, sonra scroll yap
+                requestAnimationFrame(() => {
                   activeContainerRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-                }, 50);
+                });
               }}
               className={`group relative aspect-[3/4] overflow-hidden rounded-[2rem] transition-[transform,opacity,box-shadow,border] duration-500 text-left ${
                 i === activeIndex
