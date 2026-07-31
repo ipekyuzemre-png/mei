@@ -13,20 +13,11 @@ import { siteConfig } from "@/config/site";
 export default function Portfolio() {
   const ref = useRef(null);
   const activeContainerRef = useRef(null);
-  const caseStudyRef = useRef(null);
+  const activeContainerRef = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.1 });
   const [activeIndex, setActiveIndex] = useState(0);
-  const [caseStudyOpen, setCaseStudyOpen] = useState(false);
 
   const project = siteConfig.projects[activeIndex];
-
-  const toggleCaseStudy = () => {
-    if (!caseStudyOpen) {
-      setCaseStudyOpen(true);
-    } else {
-      setCaseStudyOpen(false);
-    }
-  };
 
   return (
     <section id="portfolio" className="relative overflow-hidden py-20 sm:py-28 lg:py-36 z-30 bg-[#F4F3EE] rounded-t-[3rem] lg:rounded-t-[5rem] -mt-12 lg:-mt-20 shadow-[0_-30px_50px_rgba(0,0,0,0.1)] border-t border-black/5">
@@ -62,11 +53,11 @@ export default function Portfolio() {
           className="mb-8 sm:mb-12 scroll-mt-24 lg:scroll-mt-32"
         >
           {/* Active Project Glass Container */}
-          <div className="glass-panel-light overflow-hidden rounded-[2.5rem] border border-black/10 bg-white/10 shadow-[0_30px_80px_rgba(0,0,0,0.1)] backdrop-blur-md transition-colors duration-700">
-            <div className="grid lg:grid-cols-12 gap-0 overflow-hidden bg-transparent">
+          <div className="glass-panel-light overflow-hidden rounded-[2rem] sm:rounded-[2.5rem] border border-black/10 bg-white/10 shadow-[0_30px_80px_rgba(0,0,0,0.1)] backdrop-blur-md transition-colors duration-700">
+            <div className="grid lg:grid-cols-12 gap-0 overflow-hidden bg-transparent flex-col-reverse">
               
               {/* Text Side */}
-              <div className="flex flex-col justify-center px-6 py-10 sm:px-12 sm:py-16 lg:col-span-5 lg:px-16 lg:py-20 relative z-10">
+              <div className="flex flex-col justify-center px-6 pb-12 pt-6 sm:px-12 sm:py-16 lg:col-span-5 lg:px-16 lg:py-20 relative z-10 order-2 lg:order-1">
                 <span className="mb-3 sm:mb-4 text-xs font-bold uppercase tracking-widest text-black/50">
                   {project.category}
                 </span>
@@ -88,28 +79,22 @@ export default function Portfolio() {
                   ))}
                 </div>
 
-                <Button
-                  variant="default"
-                  size="lg"
-                  className="w-full sm:w-fit rounded-full bg-transparent text-black border border-black/20 hover:border-black hover:bg-black hover:text-white shadow-none hover:shadow-[0_8px_30px_rgb(0,0,0,0.15)] hover:-translate-y-1 transition-all duration-300 h-14 sm:h-12 group"
-                  onClick={toggleCaseStudy}
-                >
-                  {caseStudyOpen ? (
-                    <>
-                      <ChevronUp className="mr-2 size-5 transition-transform duration-300 group-hover:-translate-y-1" />
-                      Close Case Study
-                    </>
-                  ) : (
-                    <>
-                      <ExternalLink className="mr-2 size-5 transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110" />
-                      View Case Study
-                    </>
-                  )}
-                </Button>
+                {project.demoUrl ? (
+                  <Link href={project.demoUrl} className="w-full sm:w-auto">
+                    <Button variant="default" size="lg" className="w-full sm:w-fit rounded-full bg-transparent text-black border border-black/20 hover:border-black hover:bg-black hover:text-white shadow-none hover:shadow-[0_8px_30px_rgb(0,0,0,0.15)] hover:-translate-y-1 transition-all duration-300 h-14 sm:h-12 gap-2 group">
+                      View Live Site
+                      <ArrowUpRight className="size-5 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                    </Button>
+                  </Link>
+                ) : (
+                  <Button variant="default" size="lg" className="w-full sm:w-fit rounded-full bg-black/5 text-black/40 cursor-not-allowed shadow-none border border-black/5 h-14 sm:h-12 gap-2">
+                    Coming Soon
+                  </Button>
+                )}
               </div>
 
               {/* CSS Device Mockup for Image Side */}
-              <div className="relative overflow-hidden lg:col-span-7 bg-transparent p-6 sm:p-10 lg:p-16 flex items-center justify-center">
+              <div className="relative overflow-hidden lg:col-span-7 bg-transparent px-6 pt-10 pb-4 sm:p-10 lg:p-16 flex items-center justify-center order-1 lg:order-2">
                 <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent mix-blend-overlay pointer-events-none" />
                 
                 {/* Macbook-style inner frame */}
@@ -125,7 +110,8 @@ export default function Portfolio() {
                         alt={project.title}
                         fill
                         className="object-cover object-top"
-                        sizes="(max-width: 1024px) 100vw, 50vw"
+                        sizes="(max-width: 1024px) 100vw, 60vw"
+                        priority
                       />
                    </div>
                 </div>
@@ -135,103 +121,7 @@ export default function Portfolio() {
           </div>
         </motion.div>
 
-        {/* Inline Case Study - Expands Below Active Project */}
-        <AnimatePresence>
-          {caseStudyOpen && (
-            <motion.div
-              ref={caseStudyRef}
-              initial={{ height: 0, opacity: 0, marginBottom: 0 }}
-              animate={{ height: "auto", opacity: 1, marginBottom: "2rem" }}
-              exit={{ height: 0, opacity: 0, marginBottom: 0 }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
-              className="overflow-hidden scroll-mt-24 lg:scroll-mt-32"
-            >
-          <div className="pt-4">
-              <div className="rounded-[2rem] sm:rounded-[2.5rem] border border-black/10 bg-white/40 backdrop-blur-md shadow-[0_20px_60px_rgba(0,0,0,0.08)] overflow-hidden">
-                
-                {/* Case Study Header with Project Image */}
-                <div className="relative h-48 sm:h-64 overflow-hidden">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    className="object-cover object-top"
-                    sizes="100vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-[#F4F3EE]" />
-                  <div className="absolute bottom-6 left-6 sm:left-10 right-6 sm:right-10">
-                    <span className="inline-block mb-2 text-[10px] sm:text-xs font-bold uppercase tracking-widest text-white/80 bg-white/20 backdrop-blur-md px-3 py-1 rounded-full border border-white/20">
-                      Case Study
-                    </span>
-                    <h3 className="font-[Plus_Jakarta_Sans] text-2xl sm:text-3xl font-bold text-white drop-shadow-lg">
-                      {project.title}
-                    </h3>
-                  </div>
-                </div>
-
-                {/* Case Study Content */}
-                <div className="p-6 sm:p-10">
-                  {/* Long Description */}
-                  <p className="text-base sm:text-lg leading-relaxed text-black/70 mb-8 sm:mb-10">
-                    {project.longDescription}
-                  </p>
-
-                  {/* Challenge & Result Cards */}
-                  <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-8 sm:mb-10">
-                    <div className="p-5 sm:p-6 rounded-2xl bg-white/70 border border-black/5 shadow-sm">
-                      <h4 className="text-black/90 font-bold mb-3 flex items-center gap-2 font-[Plus_Jakarta_Sans]">
-                        <span className="w-2.5 h-2.5 rounded-full bg-[#D97757]" />
-                        The Challenge
-                      </h4>
-                      <p className="text-sm leading-relaxed text-black/60">
-                        {project.challenge}
-                      </p>
-                    </div>
-                    <div className="p-5 sm:p-6 rounded-2xl bg-white/70 border border-black/5 shadow-sm">
-                      <h4 className="text-black/90 font-bold mb-3 flex items-center gap-2 font-[Plus_Jakarta_Sans]">
-                        <span className="w-2.5 h-2.5 rounded-full bg-[#788C5D]" />
-                        The Result
-                      </h4>
-                      <p className="text-sm leading-relaxed text-black/60">
-                        {project.result}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Tags + CTA */}
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-5 pt-6 border-t border-black/10">
-                    <div className="flex flex-wrap gap-2">
-                      {project.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="rounded-full border border-black/10 bg-white/60 px-3 py-1 sm:px-4 sm:py-1.5 text-[10px] sm:text-xs font-semibold tracking-wide text-black/70"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                    
-                    {project.demoUrl ? (
-                      <Link href={project.demoUrl} className="w-full sm:w-auto">
-                        <Button variant="default" className="w-full sm:w-auto rounded-full bg-black text-white hover:bg-black/90 shadow-[0_10px_30px_rgba(0,0,0,0.2)] hover:shadow-[0_15px_40px_rgba(0,0,0,0.3)] hover:-translate-y-1 transition-all duration-300 h-14 sm:h-12 gap-2 group">
-                          View Live Site
-                          <ArrowUpRight className="size-5 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
-                        </Button>
-                      </Link>
-                    ) : (
-                      <Button variant="default" className="w-full sm:w-auto rounded-full bg-black/5 text-black/40 cursor-not-allowed shadow-none border border-black/5 h-14 sm:h-12 gap-2">
-                        Coming Soon
-                      </Button>
-                    )}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      {/* Thumbnails Grid (Portrait Cards) */}
+        {/* Thumbnails Grid (Portrait Cards) */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
           {siteConfig.projects.map((item, i) => (
             <motion.button
@@ -242,7 +132,6 @@ export default function Portfolio() {
               transition={{ duration: 0.6, delay: 0.2 + i * 0.1 }}
               onClick={() => {
                 setActiveIndex(i);
-                setCaseStudyOpen(false);
               }}
               className={`group relative aspect-[3/4] overflow-hidden rounded-[2rem] transition-[transform,opacity,box-shadow,border] duration-500 text-left ${
                 i === activeIndex
