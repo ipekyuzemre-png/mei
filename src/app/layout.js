@@ -4,6 +4,7 @@ import CustomCursor from "@/components/shared/CustomCursor";
 import WhatsAppButton from "@/components/shared/WhatsAppButton";
 
 import { siteConfig } from "@/config/site";
+import Script from "next/script";
 
 export const metadata = {
   metadataBase: new URL("https://www.renginyazilim.com"),
@@ -352,6 +353,16 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body suppressHydrationWarning>
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-XJHV03BCQ4" strategy="afterInteractive" />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+          
+            gtag('config', 'G-XJHV03BCQ4');
+          `}
+        </Script>
         <SmoothScroll>
           <CustomCursor />
           <WhatsAppButton />
