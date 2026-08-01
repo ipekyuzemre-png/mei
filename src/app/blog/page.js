@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 import { blogPosts } from "@/data/blog";
 
 export const metadata = {
-  title: "SEO Rehberi ve Haberler | MEI Yazılım",
+  title: "SEO Rehberi ve Haberler | Rengin Yazılım",
   description: "İşletmelerin dijitalleşme sürecinde karşılaştıkları yapısal sorunlar ve sektörel SEO odaklı özel yazılım çözümleri.",
 };
 

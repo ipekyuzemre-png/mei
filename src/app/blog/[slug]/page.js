@@ -19,7 +19,7 @@ export async function generateMetadata({ params }) {
   if (!post) return { title: "Bulunamadı" };
   
   return {
-    title: `${post.title} | MEI Yazılım`,
+    title: `${post.title} | Rengin Yazılım`,
     description: post.excerpt,
     alternates: {
       canonical: `/blog/${slug}`,
@@ -68,17 +68,17 @@ export default async function BlogPost({ params }) {
           "@context": "https://schema.org",
           "@type": "Article",
           "headline": post.title,
-          "image": `https://meiyazilim.com${post.image}`,
+          "image": `https://renginyazilim.com${post.image}`,
           "author": {
             "@type": "Organization",
-            "name": "MEI Yazılım"
+            "name": "Rengin Yazılım"
           },
           "publisher": {
             "@type": "Organization",
-            "name": "MEI Yazılım",
+            "name": "Rengin Yazılım",
             "logo": {
               "@type": "ImageObject",
-              "url": "https://meiyazilim.com/og-image.webp"
+              "url": "https://renginyazilim.com/og-image.webp"
             }
           },
           "description": post.excerpt

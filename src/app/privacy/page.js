@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
 export const metadata = {
-  title: "Gizlilik Politikası | MEI Yazılım",
+  title: "Gizlilik Politikası | Rengin Yazılım",
   description: "Gizliliğinizi ve kişisel verilerinizi koruma taahhüdümüz.",
 };
 

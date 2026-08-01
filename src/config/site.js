@@ -27,10 +27,10 @@ export const siteConfig = {
   // ---------------------------------------------------------
   // GLOBAL SETTINGS
   // ---------------------------------------------------------
-  name: "MEI Yazılım",
+  name: "Rengin Yazılım",
   shortName: "MEI",
   description: "Sıradan şablonları unutun. Markanızı dijitalde bir adım öne taşıyacak stratejik, estetik ve yüksek performanslı dijital başyapıtlar tasarlıyoruz.",
-  author: "MEI Yazılım",
+  author: "Rengin Yazılım",
 
   // ---------------------------------------------------------
   // NAVIGATION
@@ -56,7 +56,7 @@ export const siteConfig = {
     secondaryButtonText: "Bize Ulaşın",
     secondaryButtonHref: "#contact",
     mockupImage: "/hero_mockup_en.webp",
-    mockupAlt: "Mei Yazılım Dashboard Paneli",
+    mockupAlt: "Rengin Yazılım Dashboard Paneli",
   },
 
   // ---------------------------------------------------------
@@ -172,7 +172,7 @@ export const siteConfig = {
     badge: "Neden Biz?",
     title: "Dijital Dünyada",
     highlight: "Premium Standartlar",
-    description: "MEI Yazılım olarak sadece kod yazmıyoruz; markanızın vizyonunu dijitalde hayata geçiriyoruz. Standart şablonlara veda edin.",
+    description: "Rengin Yazılım olarak sadece kod yazmıyoruz; markanızın vizyonunu dijitalde hayata geçiriyoruz. Standart şablonlara veda edin.",
   },
   aboutText: "Estetik kaygımız, derin teknik uzmanlığımız ve farklı olma cesaretimizle her projede sınırları zorluyoruz. Türkiye genelindeki ve globaldeki müşterilerimiz bizi sadece bir yazılım firması değil, yenilikçi bir teknoloji ortağı olarak görüyor.",
   visionItems: [
@@ -223,12 +223,12 @@ export const siteConfig = {
   // FOOTER SECTION
   // ---------------------------------------------------------
   contactInfo: {
-    email: "iletisim@meiyazilim.com",
+    email: "iletisim@renginyazilim.com",
     phone: "+90 (530) 832-1395",
     address: "Ay Center- Talaytepe, Laleş Blv., 21070 Kayapınar/Diyarbakır",
   },
   socialLinks: [
-    { icon: Globe, href: "https://meiyazilim.com", label: "Website" },
+    { icon: Globe, href: "https://renginyazilim.com", label: "Website" },
     { icon: MessageCircle, href: "https://wa.me/905308321395", label: "WhatsApp" },
     { icon: Share2, href: "https://instagram.com", label: "Instagram" },
     { icon: Link2, href: "https://linkedin.com", label: "LinkedIn" },

@@ -32,6 +32,7 @@
 
 html {
   -webkit-font-smoothing: antialiased;
+  color-scheme: light !important;
 }
 
 body {
@@ -40,6 +41,7 @@ body {
   color: var(--foreground);
   overflow-x: hidden;
   line-height: 1.7;
+  color-scheme: light !important;
 }
 
 ::selection {

@@ -41,15 +41,15 @@ function Logo({ compact = false, isLight = false, forceText = false }) {
             </defs>
             <circle cx="50" cy="50" r="42" stroke="currentColor" strokeWidth="1.5" strokeDasharray="6 6" opacity="0.3" className="animate-[spin_20s_linear_infinite]" />
             <circle cx="50" cy="50" r="35" stroke="currentColor" strokeWidth="1" opacity="0.15" />
-            <path d="M 25 75 C 25 20, 42 20, 50 50" stroke="url(#exo-m-nav)" strokeWidth="8" strokeLinecap="round" />
-            <path d="M 75 75 C 75 20, 58 20, 50 50" stroke="currentColor" strokeWidth="4" strokeLinecap="round" opacity="0.8" />
-            <path d="M 50 40 L 54 50 L 50 60 L 46 50 Z" fill="currentColor" className="animate-pulse" />
+            <path d="M 35 75 V 35 C 35 20, 65 20, 65 40 C 65 55, 45 55, 35 55" stroke="url(#exo-m-nav)" strokeWidth="8" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M 45 55 L 65 75" stroke="currentColor" strokeWidth="6" strokeLinecap="round" opacity="0.8" />
+            <path d="M 65 68 L 69 75 L 65 82 L 61 75 Z" fill="currentColor" className="animate-pulse" />
           </svg>
         </div>
         {!compact && (
           <div className={forceText ? "flex flex-col" : "hidden min-[380px]:flex flex-col"}>
             <span className={`font-[Plus_Jakarta_Sans] text-sm font-bold tracking-widest transition-colors ${isLight ? 'text-black' : 'text-white'}`}>
-              MEI YAZILIM
+              RENGİN YAZILIM
             </span>
           </div>
         )}

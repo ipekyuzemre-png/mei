@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
 export const metadata = {
-  title: "Kullanım Koşulları | MEI Yazılım",
+  title: "Kullanım Koşulları | Rengin Yazılım",
   description: "Hizmetlerimizin kullanımını düzenleyen şartlar ve koşullar.",
 };
 

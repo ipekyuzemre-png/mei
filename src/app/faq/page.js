@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
 export const metadata = {
-  title: "Sıkça Sorulan Sorular | MEI Yazılım",
+  title: "Sıkça Sorulan Sorular | Rengin Yazılım",
   description: "Dijital ajans hizmetlerimiz hakkında sıkça sorulan sorular.",
 };
 
