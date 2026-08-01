@@ -17,9 +17,9 @@ export default function Home() {
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
           "name": siteConfig.name,
-          "image": "https://meiyazilim.com/og-image.webp",
-          "@id": "https://meiyazilim.com",
-          "url": "https://meiyazilim.com",
+          "image": "https://www.renginyazilim.com/og-image.webp",
+          "@id": "https://www.renginyazilim.com",
+          "url": "https://www.renginyazilim.com",
           "telephone": siteConfig.contactInfo.phone,
           "address": {
             "@type": "PostalAddress",

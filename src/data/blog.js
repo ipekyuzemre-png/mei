@@ -169,7 +169,7 @@ export const blogPosts = [
     title: "Diyarbakır Web Tasarım: Kurumsal Firmalar İçin Premium Çözümler",
     date: "1 Ağustos 2026",
     readTime: "4 Dk Okuma",
-    image: "/services/seo.webp",
+    image: "/blog/diyarbakir_web_tasarim.webp",
     excerpt: "Diyarbakır esnafı ve kurumsal şirketleri için özel web sitesi yapımının ve yerel SEO'nun işletme cirolarına yapısal etkileri.",
     content: `
       <p class="text-lg font-medium leading-relaxed mb-6 text-black ">Diyarbakır'daki 500'den fazla işletmenin dijital varlık verilerini analiz ettiğimizde, mobil uyumlu ve SEO odaklı profesyonel bir web sitesine sahip olanların yıllık cirosunda %40'lık doğrudan bir korelasyon görülmektedir; bu tesadüf değil, dijital görünürlüğün yapısal bir sonucudur.</p>
@@ -197,7 +197,7 @@ export const blogPosts = [
     title: "Diyarbakır Oto Yıkama Yazılımı ve Ticari Otomasyon Sistemleri",
     date: "1 Ağustos 2026",
     readTime: "3 Dk Okuma",
-    image: "/services/custom_software.webp",
+    image: "/blog/diyarbakir_otomasyon.webp",
     excerpt: "Hizmet ve perakende sektöründe manuel süreçlerin yarattığı kâr kayıpları ve Rengin Yazılım otomasyon sistemlerinin kesin çözümleri.",
     content: `
       <p class="text-lg font-medium leading-relaxed mb-6 text-black ">Diyarbakır genelindeki hizmet sektörü firmalarının operasyonel verilerini incelediğimizde, manuel fiş ve defter kayıt sistemlerinden dijital otomasyona geçen işletmelerin gelir kaçağında %85'lik yapısal bir düşüş yaşadığı kanıtlanmıştır.</p>
@@ -225,7 +225,7 @@ export const blogPosts = [
     title: "Diyarbakır Emlak ve Gayrimenkul Danışmanlığı İçin Profesyonel Web Çözümleri",
     date: "1 Ağustos 2026",
     readTime: "3 Dk Okuma",
-    image: "/services/branding.webp",
+    image: "/blog/diyarbakir_emlak.webp",
     excerpt: "Diyarbakır'da artan gayrimenkul rekabetinde dijital portföy yönetimi ile müşteri güvenini nasıl kazanırsınız?",
     content: `
       <p class="text-lg font-medium leading-relaxed mb-6 text-black ">Diyarbakır emlak sektöründeki satış verilerini incelediğimizde, profesyonel dijital portföye sahip olan gayrimenkul danışmanlarının lüks konut satışlarında %60'lık bir başarı artışı yakaladığını görüyoruz.</p>
@@ -244,7 +244,7 @@ export const blogPosts = [
     title: "Diyarbakır Toptancı ve B2B Firmaları İçin Sipariş ve Bayi Yazılımı",
     date: "1 Ağustos 2026",
     readTime: "4 Dk Okuma",
-    image: "/services/custom_software.webp",
+    image: "/blog/diyarbakir_b2b.webp",
     excerpt: "Gıda, hırdavat ve tekstil toptancılarının WhatsApp siparişlerinden B2B otomasyonuna geçiş rehberi.",
     content: `
       <p class="text-lg font-medium leading-relaxed mb-6 text-black ">Diyarbakır'daki toptancı ağlarını analiz ettiğimizde, WhatsApp ve telefon üzerinden alınan toptan siparişlerin %18'inde sipariş hatası ve stok açığı yaşandığını tespit ettik.</p>
@@ -263,7 +263,7 @@ export const blogPosts = [
     title: "Diyarbakır Avukatları ve Hukuk Büroları İçin Premium Dijital İtibar",
     date: "1 Ağustos 2026",
     readTime: "3 Dk Okuma",
-    image: "/services/web.webp",
+    image: "/blog/diyarbakir_avukat.webp",
     excerpt: "Diyarbakır Barosu'na kayıtlı avukatlar için Baro reklam yasaklarına uyumlu, otoriter ve premium web tasarım stratejileri.",
     content: `
       <p class="text-lg font-medium leading-relaxed mb-6 text-black ">Hukuki danışmanlık arayan müvekkillerin büyük çoğunluğu, randevu almadan önce avukatın veya hukuk bürosunun dijital varlığını inceliyor; bu dijital ilk izlenim, davanın kendisine verilmesindeki en büyük psikolojik etkendir.</p>

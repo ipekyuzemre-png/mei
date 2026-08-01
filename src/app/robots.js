@@ -6,6 +6,6 @@ export default function robots() {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://meiyazilim.com/sitemap.xml",
+    sitemap: "https://www.renginyazilim.com/sitemap.xml",
   };
 }

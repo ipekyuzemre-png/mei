@@ -6,9 +6,9 @@ import WhatsAppButton from "@/components/shared/WhatsAppButton";
 import { siteConfig } from "@/config/site";
 
 export const metadata = {
-  metadataBase: new URL("https://renginyazilim.com"),
+  metadataBase: new URL("https://www.renginyazilim.com"),
   title: {
-    default: "Diyarbakır Web Tasarım ve Kurumsal Yazılım Şirketi | Rengin Yazılım",
+    default: "Diyarbakır Web Tasarım ve Dijital Ajans | Rengin Yazılım",
     template: `%s | ${siteConfig.name}`,
   },
   description: "Diyarbakır esnaf ve firmalarına özel mobil uyumlu kurumsal web sitesi, e-ticaret sitenizi kurun hizmetleri ve yazılım çözümleri. Hemen teklif alın!",
@@ -317,7 +317,7 @@ export const metadata = {
   openGraph: {
     title: "Diyarbakır Web Tasarım | Rengin Yazılım",
     description: "İşletmenizi dijitale taşıyın. Profesyonel web sitesi yapımı ve e-ticaret çözümleri.",
-    url: "https://renginyazilim.com",
+    url: "https://www.renginyazilim.com",
     siteName: "Rengin Yazılım",
     locale: "tr_TR",
     type: "website",

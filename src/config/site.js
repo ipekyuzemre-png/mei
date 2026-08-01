@@ -228,7 +228,7 @@ export const siteConfig = {
     address: "Ay Center- Talaytepe, Laleş Blv., 21070 Kayapınar/Diyarbakır",
   },
   socialLinks: [
-    { icon: Globe, href: "https://renginyazilim.com", label: "Website" },
+    { icon: Globe, href: "https://www.renginyazilim.com", label: "Website" },
     { icon: MessageCircle, href: "https://wa.me/905308321395", label: "WhatsApp" },
     { icon: Share2, href: "https://instagram.com", label: "Instagram" },
     { icon: Link2, href: "https://linkedin.com", label: "LinkedIn" },

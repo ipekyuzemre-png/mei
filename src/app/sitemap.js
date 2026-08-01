@@ -2,7 +2,7 @@ export const dynamic = "force-static";
 import { blogPosts } from "@/data/blog";
 
 export default function sitemap() {
-  const baseUrl = "https://meiyazilim.com";
+  const baseUrl = "https://www.renginyazilim.com";
 
   // Get all blog post URLs
   const blogUrls = blogPosts.map((post) => ({

@@ -68,7 +68,7 @@ export default async function BlogPost({ params }) {
           "@context": "https://schema.org",
           "@type": "Article",
           "headline": post.title,
-          "image": `https://renginyazilim.com${post.image}`,
+          "image": `https://www.renginyazilim.com${post.image}`,
           "author": {
             "@type": "Organization",
             "name": "Rengin Yazılım"
@@ -78,7 +78,7 @@ export default async function BlogPost({ params }) {
             "name": "Rengin Yazılım",
             "logo": {
               "@type": "ImageObject",
-              "url": "https://renginyazilim.com/og-image.webp"
+              "url": "https://www.renginyazilim.com/og-image.webp"
             }
           },
           "description": post.excerpt
