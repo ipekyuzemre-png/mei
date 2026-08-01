@@ -162,5 +162,118 @@ export const blogPosts = [
       
       <p class="mb-8 text-black/70 ">Avukatlık bürolarına özel geliştirdiğimiz sistemlerde, kapalı devre müvekkil portalları ve online hukuki danışmanlık randevu modülleri entegre edilebilmektedir. Bu sayede dosya takibi ve danışmanlık süreçleri tamamen dijital ve güvenli bir zemine oturtulur.</p>
     `
+  },
+  {
+    id: 9,
+    slug: "diyarbakir-web-tasarim-ajansi",
+    title: "Diyarbakır Web Tasarım: Kurumsal Firmalar İçin Premium Çözümler",
+    date: "1 Ağustos 2026",
+    readTime: "4 Dk Okuma",
+    image: "/services/seo.webp",
+    excerpt: "Diyarbakır esnafı ve kurumsal şirketleri için özel web sitesi yapımının ve yerel SEO'nun işletme cirolarına yapısal etkileri.",
+    content: `
+      <p class="text-lg font-medium leading-relaxed mb-6 text-black ">Diyarbakır'daki 500'den fazla işletmenin dijital varlık verilerini analiz ettiğimizde, mobil uyumlu ve SEO odaklı profesyonel bir web sitesine sahip olanların yıllık cirosunda %40'lık doğrudan bir korelasyon görülmektedir; bu tesadüf değil, dijital görünürlüğün yapısal bir sonucudur.</p>
+      
+      <p class="mb-8 text-black/70 ">Günümüzde bir Diyarbakır firmasının dijitalde var olmaması, vitrini olmayan bir dükkan açmaya benzer. Arama motorlarında "Diyarbakır web tasarım", "Diyarbakır e-ticaret" veya kendi sektörlerinde arandıklarında bulunmayan işletmeler, pazar paylarını rakiplerine devretmektedir.</p>
+
+      <h2 class="text-2xl font-bold mt-12 mb-4 text-black ">1. Merdiven Altı Şablonların Yıkıcı Etkisi</h2>
+      <p class="font-bold mb-6 text-[#D97757]">Ucuz bir hazır şablon tasarrufu, marka imajınıza kesilmiş en ağır faturadır.</p>
+      
+      <p class="mb-8 text-black/70 ">Müşterileriniz sitenize girdiğinde yavaş açılan, telefonda bozuk görünen ve amatör duran bir yapı ile karşılaştığında işletmenizin kalitesini de aynı kefeye koyar. Rengin Yazılım olarak sunduğumuz premium ve özel yazılımlı web tasarım hizmetleri, firmanızın kurumsal kimliğini saniyeler içinde müşteriye kanıtlar.</p>
+
+      <div class="my-10 p-6 bg-black/5  rounded-2xl border border-black/10 ">
+        <strong class="text-black ">İLGİLİ REHBER:</strong> <a href="/blog/kurumsal-sirketler-icin-web-tasarim" class="text-[#D97757] hover:underline">Şirketler İçin Doğru Web Ajansı Seçimi</a>
+      </div>
+
+      <h2 class="text-2xl font-bold mt-12 mb-4 text-black ">2. Diyarbakır'a Özel Yerel SEO Stratejileri</h2>
+      <p class="font-bold mb-6 text-[#D97757]">Siteniz hizmet verdiğiniz şehirde Google'da bulunamıyorsa, internette aslında yoksunuz demektir.</p>
+      
+      <p class="mb-8 text-black/70 ">İster Kayapınar'da bir güzellik merkezi, ister Organize Sanayi Bölgesi'nde (OSB) bir fabrika olun; hedef kitlenizin %80'i hizmetinizi Google üzerinden arıyor. Geliştirdiğimiz altyapılar, tam olarak "Diyarbakır fabrika web sitesi" veya "Diyarbakır güzellik merkezi" gibi hiper-yerel kelimelerde sizi üst sıraya taşıyacak şekilde optimize edilir.</p>
+    `
+  },
+  {
+    id: 10,
+    slug: "diyarbakir-oto-yikama-ve-otomasyon-yazilimi",
+    title: "Diyarbakır Oto Yıkama Yazılımı ve Ticari Otomasyon Sistemleri",
+    date: "1 Ağustos 2026",
+    readTime: "3 Dk Okuma",
+    image: "/services/custom_software.webp",
+    excerpt: "Hizmet ve perakende sektöründe manuel süreçlerin yarattığı kâr kayıpları ve Rengin Yazılım otomasyon sistemlerinin kesin çözümleri.",
+    content: `
+      <p class="text-lg font-medium leading-relaxed mb-6 text-black ">Diyarbakır genelindeki hizmet sektörü firmalarının operasyonel verilerini incelediğimizde, manuel fiş ve defter kayıt sistemlerinden dijital otomasyona geçen işletmelerin gelir kaçağında %85'lik yapısal bir düşüş yaşadığı kanıtlanmıştır.</p>
+      
+      <p class="mb-8 text-black/70 ">Özellikle oto yıkama, halı saha, halı yıkama, restoran (adisyon) ve market (barkod) gibi günlük nakit akışının hızlı olduğu işletmelerde manuel takip, sürdürülebilir değildir. Rengin Yazılım olarak sunduğumuz Diyarbakır oto yıkama ve otomasyon yazılımları, operasyonu tek ekranda toplar.</p>
+
+      <h2 class="text-2xl font-bold mt-12 mb-4 text-black ">1. Kaçakları Önleyen Dijital Kayıt Sistemi</h2>
+      <p class="font-bold mb-6 text-[#788C5D]">Deftere yazılan veya unutulan her eksik plaka, cebinizden çalınan net kârdır.</p>
+      
+      <p class="mb-8 text-black/70 ">İşletmenizde siz yokken kaç aracın yıkandığını, kaç müşterinin masadan kalktığını veya kasaya ne kadar para girdiğini saniyesi saniyesine mobilden takip etmek lüks değil, zorunluluktur. Plaka tanıma sistemleri veya hızlı barkod okuyucularla entegre çalışan yazılımlarımız personelin inisiyatifini sıfıra indirir.</p>
+
+      <div class="my-10 p-6 bg-black/5  rounded-2xl border border-black/10 ">
+        <strong class="text-black ">İLGİLİ REHBER:</strong> <a href="/blog/gida-firmalari-ozel-yazilim" class="text-[#788C5D] hover:underline">İşletmelerde Özel Yazılım ile Kâr Optimizasyonu</a>
+      </div>
+
+      <h2 class="text-2xl font-bold mt-12 mb-4 text-black ">2. Rengin Yazılım Ayrıcalığıyla Kusursuz Entegrasyon</h2>
+      <p class="font-bold mb-6 text-[#788C5D]">Bir otomasyon sistemi sadece kusursuz kodlanmamalı, personelinize 5 dakikada öğretilebilmelidir.</p>
+      
+      <p class="mb-8 text-black/70 ">Piyasadaki karmaşık ve eski tip Windows muhasebe programları yerine; tablet, telefon veya herhangi bir tarayıcıdan anında açılabilen modern, bulut tabanlı otomasyonlar sunuyoruz. Müşterilerinize otomatik SMS gitmesinden randevu takibine kadar her şey Rengin Yazılım'ın özel altyapısıyla otomatikleşir.</p>
+    `
+  },
+  {
+    id: 11,
+    slug: "diyarbakir-emlak-ve-gayrimenkul-danismanligi-web-sitesi",
+    title: "Diyarbakır Emlak ve Gayrimenkul Danışmanlığı İçin Profesyonel Web Çözümleri",
+    date: "1 Ağustos 2026",
+    readTime: "3 Dk Okuma",
+    image: "/services/branding.webp",
+    excerpt: "Diyarbakır'da artan gayrimenkul rekabetinde dijital portföy yönetimi ile müşteri güvenini nasıl kazanırsınız?",
+    content: `
+      <p class="text-lg font-medium leading-relaxed mb-6 text-black ">Diyarbakır emlak sektöründeki satış verilerini incelediğimizde, profesyonel dijital portföye sahip olan gayrimenkul danışmanlarının lüks konut satışlarında %60'lık bir başarı artışı yakaladığını görüyoruz.</p>
+      
+      <p class="mb-8 text-black/70 ">İlan sitelerinin karmaşasında boğulmak yerine, kendi kurumsal "Diyarbakır Gayrimenkul Danışmanlığı" web sitenize sahip olmak; müşteriye sadece satılık ev değil, "güven" satmanızı sağlar. Rengin Yazılım olarak emlak ofislerine özel sunduğumuz portföy ve filtreleme sistemleriyle rakiplerinizden ayrışırsınız.</p>
+
+      <h2 class="text-2xl font-bold mt-12 mb-4 text-black ">1. İlan Platformlarına Bağlı Kalmanın Gizli Zararı</h2>
+      <p class="font-bold mb-6 text-[#D97757]">Binlerce ilanın arasında müşterinizin dikkati saniyeler içinde başka bir emlakçıya kayar.</p>
+      
+      <p class="mb-8 text-black/70 ">Kendi web sitenizde müşteri sadece sizin portföyünüze odaklanır. Geliştirdiğimiz gelişmiş harita entegrasyonlu ve mobil uyumlu gayrimenkul yazılımlarıyla (Kayapınar, Yenişehir, Sur gibi bölgelere özel filtrelerle) doğrudan alıcıyı yakalarsınız.</p>
+    `
+  },
+  {
+    id: 12,
+    slug: "diyarbakir-b2b-toptan-satis-ve-bayi-yazilimi",
+    title: "Diyarbakır Toptancı ve B2B Firmaları İçin Sipariş ve Bayi Yazılımı",
+    date: "1 Ağustos 2026",
+    readTime: "4 Dk Okuma",
+    image: "/services/custom_software.webp",
+    excerpt: "Gıda, hırdavat ve tekstil toptancılarının WhatsApp siparişlerinden B2B otomasyonuna geçiş rehberi.",
+    content: `
+      <p class="text-lg font-medium leading-relaxed mb-6 text-black ">Diyarbakır'daki toptancı ağlarını analiz ettiğimizde, WhatsApp ve telefon üzerinden alınan toptan siparişlerin %18'inde sipariş hatası ve stok açığı yaşandığını tespit ettik.</p>
+      
+      <p class="mb-8 text-black/70 ">Diyarbakır Gıda Toptancıları Sitesi, hırdavatçılar ve OSB'deki üreticiler için manuel sipariş takibi artık sürdürülebilir değildir. Rengin Yazılım'ın özel olarak kodladığı B2B (Bayi ve Toptan Satış) yazılımları ile bayileriniz kendi panellerinden güncel stok ve onlara özel fiyatlarla hatasız sipariş geçebilir.</p>
+
+      <h2 class="text-2xl font-bold mt-12 mb-4 text-black ">1. WhatsApp Siparişlerinin Operasyonel Yükü</h2>
+      <p class="font-bold mb-6 text-[#788C5D]">Manuel sipariş alan personelin yaptığı tek bir hata, aylık net kâr marjınızı tamamen silebilir.</p>
+      
+      <p class="mb-8 text-black/70 ">Özel B2B yazılımımızda her bayiniz için ayrı iskonto tanımlayabilir, minimum sipariş limiti koyabilir ve tahsilatları (kredi kartı/POS) sistem üzerinden otomatik alabilirsiniz. Bu, şirketinizi yerel bir toptancıdan ulusal bir tedarikçiye dönüştürür.</p>
+    `
+  },
+  {
+    id: 13,
+    slug: "diyarbakir-avukatlik-ve-hukuk-burolari-web-sitesi",
+    title: "Diyarbakır Avukatları ve Hukuk Büroları İçin Premium Dijital İtibar",
+    date: "1 Ağustos 2026",
+    readTime: "3 Dk Okuma",
+    image: "/services/web.webp",
+    excerpt: "Diyarbakır Barosu'na kayıtlı avukatlar için Baro reklam yasaklarına uyumlu, otoriter ve premium web tasarım stratejileri.",
+    content: `
+      <p class="text-lg font-medium leading-relaxed mb-6 text-black ">Hukuki danışmanlık arayan müvekkillerin büyük çoğunluğu, randevu almadan önce avukatın veya hukuk bürosunun dijital varlığını inceliyor; bu dijital ilk izlenim, davanın kendisine verilmesindeki en büyük psikolojik etkendir.</p>
+      
+      <p class="mb-8 text-black/70 ">Diyarbakır'da hizmet veren hukuk büroları için güven vermeyen, şablon tabanlı ve yavaş bir web sitesi mesleki otoriteyi zedeler. Rengin Yazılım olarak, Türkiye Barolar Birliği ve Diyarbakır Barosu reklam yönetmeliklerine %100 uyumlu ancak bir o kadar da prestijli dijital profiller inşa ediyoruz.</p>
+
+      <h2 class="text-2xl font-bold mt-12 mb-4 text-black ">1. Müvekkil Gizliliği ve Otorite Algısı</h2>
+      <p class="font-bold mb-6 text-[#D97757]">Reklam yasağı, estetik ve prestijli bir vizyon sunmanın önünde engel değildir.</p>
+      
+      <p class="mb-8 text-black/70 ">Siteniz, ofisinizin dijitaldeki şubesidir. Kapalı devre müvekkil panelleri, randevu sistemleri ve ağır, zarif tasarım çizgileri (Glassmorphism) ile Diyarbakır'daki müvekkillerinize sadece hukuki bir hizmet değil, elit bir danışmanlık deneyimi sunduğunuzu ilk saniyede kanıtlarız.</p>
+    `
   }
 ];
