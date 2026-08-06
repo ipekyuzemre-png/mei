@@ -256,11 +256,11 @@ export const siteConfig = {
     {
       title: "Kaynaklar",
       links: [
+        { name: "Sektörel Çözümler", href: "/sektorel-cozumler" },
         { name: "Sıkça Sorulan Sorular", href: "/faq" },
         { name: "Gizlilik Politikası", href: "/privacy" },
         { name: "Hizmet Şartları", href: "/terms" },
         { name: "Çerez Politikası", href: "/privacy" },
-        { name: "Site Haritası", href: "#hero" },
       ],
     },
   ],
