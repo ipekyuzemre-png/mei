@@ -792,11 +792,11 @@ export const seoProfessions = [
 
 export function generatePseoData() {
   const data = [];
-  
+
   seoLocations.forEach(location => {
     seoProfessions.forEach(profession => {
       const slug = `diyarbakir-${location.id}-${profession.id}-web-sitesi-yapimi`;
-      
+
       data.push({
         slug,
         location,
@@ -808,7 +808,7 @@ export function generatePseoData() {
       });
     });
   });
-  
+
   return data;
 }
 
