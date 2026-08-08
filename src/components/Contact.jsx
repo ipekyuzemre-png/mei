@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
 import { siteConfig } from "@/config/site";
+import { useRouter } from "next/navigation";
 
 function FieldLabel({ icon: Icon, children }) {
   return (
@@ -28,6 +29,7 @@ function FieldLabel({ icon: Icon, children }) {
 }
 
 export default function Contact() {
+  const router = useRouter();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.15 });
   const [successOpen, setSuccessOpen] = useState(false);
@@ -45,19 +47,18 @@ export default function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    // WhatsApp'a yönlendirme
-    const phoneNumber = siteConfig.contactInfo.phone.replace(/[^0-9]/g, '');
+    // WhatsApp metnini oluştur
     let text = `*Yeni Teklif Talebi*\n\n`;
     text += `*Ad Soyad:* ${formData.name}\n`;
     if (formData.company) text += `*Firma:* ${formData.company}\n`;
     if (formData.service) text += `*İstenen Hizmet:* ${formData.service}\n`;
     text += `*Proje Detayı:* ${formData.details}`;
     
-    const waUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
-    window.open(waUrl, '_blank');
-
-    setSuccessOpen(true);
+    // Formu temizle
     setFormData({ name: "", company: "", service: "", details: "" });
+
+    // Google Ads dönüşüm takibi için tasarladığımız sayfaya yönlendiriyoruz
+    router.push(`/whatsapp-yonlendirme?text=${encodeURIComponent(text)}`);
   };
 
   return (
