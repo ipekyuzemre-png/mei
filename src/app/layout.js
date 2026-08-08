@@ -352,6 +352,7 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-XJHV03BCQ4" strategy="afterInteractive" />
+        <Script src="https://www.googletagmanager.com/gtag/js?id=AW-18378761891" strategy="afterInteractive" />
         <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
@@ -359,6 +360,7 @@ export default function RootLayout({ children }) {
             gtag('js', new Date());
           
             gtag('config', 'G-XJHV03BCQ4');
+            gtag('config', 'AW-18378761891');
           `}
         </Script>
       </head>
