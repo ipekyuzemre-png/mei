@@ -225,7 +225,7 @@ export const siteConfig = {
   contactInfo: {
     email: "iletisim@renginyazilim.com",
     phone: "+90 (530) 832-1395",
-    address: "Ay Center- Talaytepe, Laleş Blv., 21070 Kayapınar/Diyarbakır",
+    address: "Kayapınar/Diyarbakır",
   },
   socialLinks: [
     { icon: Globe, href: "https://www.renginyazilim.com", label: "Website" },
