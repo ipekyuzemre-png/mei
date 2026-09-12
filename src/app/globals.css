@@ -142,11 +142,7 @@ h6 {
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-@media (pointer: fine) {
-  body, a, button, input, select, textarea {
-    cursor: none !important;
-  }
-}
+
 
 @layer base {
   * {

@@ -1,6 +1,5 @@
 import "./globals.css";
 import SmoothScroll from "@/components/shared/SmoothScroll";
-import CustomCursor from "@/components/shared/CustomCursor";
 import WhatsAppButton from "@/components/shared/WhatsAppButton";
 
 import { siteConfig } from "@/config/site";
@@ -366,7 +365,6 @@ export default function RootLayout({ children }) {
       </head>
       <body suppressHydrationWarning>
         <SmoothScroll>
-          <CustomCursor />
           <WhatsAppButton />
           <div className="relative z-10">
             {children}
