@@ -6,6 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Container from "@/components/shared/Container";
 import Magnetic from "@/components/shared/Magnetic";
+import AnnouncementBar from "@/components/shared/AnnouncementBar";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -109,14 +110,15 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed inset-x-0 top-0 z-[100] transition-all duration-500 md:backdrop-blur-md saturate-150 ${
+        className={`fixed inset-x-0 top-0 z-[100] transition-all duration-500 md:backdrop-blur-md saturate-150 flex flex-col ${
           isScrolled
-            ? `border-b ${currentStyle.bg} py-3 shadow-[0_4px_30px_rgba(0,0,0,0.1)]`
-            : "border-b border-transparent bg-transparent py-5 shadow-none"
+            ? `border-b ${currentStyle.bg} shadow-[0_4px_30px_rgba(0,0,0,0.1)]`
+            : "border-b border-transparent bg-transparent shadow-none"
         }`}
       >
-        <Container size="xl" className="flex items-center justify-between gap-4">
-          <Logo isLight={isLight && isScrolled} />
+        <div className={`transition-all duration-500 ${isScrolled ? 'py-3' : 'py-5'}`}>
+          <Container size="xl" className="flex items-center justify-between gap-4">
+            <Logo isLight={isLight && isScrolled} />
 
           <nav className={`hidden items-center gap-2 rounded-full border px-2 py-1 backdrop-blur-md lg:flex transition-colors duration-500 ${isLight && isScrolled ? 'border-black/5 bg-black/[0.02]' : 'border-white/20 bg-white/[0.05]'}`} aria-label="Main menu">
             {siteConfig.navLinks.map((link) => {
@@ -167,6 +169,8 @@ export default function Navbar() {
             </Magnetic>
           </div>
         </Container>
+        </div>
+        <AnnouncementBar />
       </header>
 
       <Dialog open={mobileOpen} onOpenChange={setMobileOpen}>
