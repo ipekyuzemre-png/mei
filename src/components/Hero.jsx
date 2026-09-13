@@ -8,11 +8,11 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative overflow-hidden pt-40 pb-4 sm:pt-52 sm:pb-8 bg-transparent"
+      className="relative overflow-hidden pt-52 pb-8 sm:pt-64 sm:pb-12 bg-transparent"
     >
 
       {/* Subtle Background Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] max-w-[800px] max-h-[800px] bg-white/10 blur-[120px] rounded-full pointer-events-none z-0" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] max-w-[800px] max-h-[800px] bg-white/10 md:blur-[120px] rounded-full pointer-events-none z-0" />
 
       <Container size="md" className="relative z-10 text-center">
         <div className="mx-auto max-w-5xl">

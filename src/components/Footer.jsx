@@ -32,11 +32,11 @@ export default function Footer() {
                           <stop offset="100%" stopColor="currentColor" stopOpacity="0.6" />
                         </linearGradient>
                       </defs>
-                      <circle cx="50" cy="50" r="42" stroke="currentColor" strokeWidth="1.5" strokeDasharray="6 6" opacity="0.3" className="animate-[spin_20s_linear_infinite]" />
+                      <circle cx="50" cy="50" r="42" stroke="currentColor" strokeWidth="1.5" strokeDasharray="6 6" opacity="0.3" className="md:animate-[spin_20s_linear_infinite]" />
                       <circle cx="50" cy="50" r="35" stroke="currentColor" strokeWidth="1" opacity="0.15" />
                       <path d="M 25 75 C 25 20, 42 20, 50 50" stroke="url(#exo-m-foot)" strokeWidth="8" strokeLinecap="round" />
                       <path d="M 75 75 C 75 20, 58 20, 50 50" stroke="currentColor" strokeWidth="4" strokeLinecap="round" opacity="0.8" />
-                      <path d="M 50 40 L 54 50 L 50 60 L 46 50 Z" fill="currentColor" className="animate-pulse" />
+                      <path d="M 50 40 L 54 50 L 50 60 L 46 50 Z" fill="currentColor" className="md:animate-pulse" />
                     </svg>
                   </div>
                   <div className="flex flex-col text-left">

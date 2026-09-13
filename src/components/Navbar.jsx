@@ -40,11 +40,11 @@ function Logo({ compact = false, isLight = false, forceText = false }) {
                 <stop offset="100%" stopColor="currentColor" stopOpacity="0.6" />
               </linearGradient>
             </defs>
-            <circle cx="50" cy="50" r="42" stroke="currentColor" strokeWidth="1.5" strokeDasharray="6 6" opacity="0.3" className="animate-[spin_20s_linear_infinite]" />
+            <circle cx="50" cy="50" r="42" stroke="currentColor" strokeWidth="1.5" strokeDasharray="6 6" opacity="0.3" className="md:animate-[spin_20s_linear_infinite]" />
             <circle cx="50" cy="50" r="35" stroke="currentColor" strokeWidth="1" opacity="0.15" />
             <path d="M 35 75 V 35 C 35 20, 65 20, 65 40 C 65 55, 45 55, 35 55" stroke="url(#exo-m-nav)" strokeWidth="8" strokeLinecap="round" strokeLinejoin="round" />
             <path d="M 45 55 L 65 75" stroke="currentColor" strokeWidth="6" strokeLinecap="round" opacity="0.8" />
-            <path d="M 65 68 L 69 75 L 65 82 L 61 75 Z" fill="currentColor" className="animate-pulse" />
+            <path d="M 65 68 L 69 75 L 65 82 L 61 75 Z" fill="currentColor" className="md:animate-pulse" />
           </svg>
         </div>
         {!compact && (
