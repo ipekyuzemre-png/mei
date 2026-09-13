@@ -48,9 +48,9 @@ export const siteConfig = {
   // HERO SECTION
   // ---------------------------------------------------------
   hero: {
-    titleLine1: "Güçlü Dijital",
-    titleLine2: "Markalar Yaratıyoruz.",
-    description: "Sıradan şablonları unutun. İşletmenizi ulusal ve global pazarda dijitalde zirveye taşıyacak premium web tasarım ve yazılım çözümleri üretiyoruz.",
+    titleLine1: "Diyarbakır Web Tasarım",
+    titleLine2: "ve Özel Yazılım Çözümleri.",
+    description: "Diyarbakır'daki işletmenizi ulusal ve global pazarda dijitalde zirveye taşıyacak, altyapılı premium web tasarım ve özel yazılım çözümleri üretiyoruz.",
     primaryButtonText: "Projelerimiz",
     primaryButtonHref: "#portfolio",
     secondaryButtonText: "Bize Ulaşın",
