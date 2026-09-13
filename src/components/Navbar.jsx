@@ -106,7 +106,7 @@ export default function Navbar() {
 
   const currentStyle = sectionStyles[activeSection] || sectionStyles.hero;
   const isLight = currentStyle.theme === "light";
-  const showDarkText = isLight && (isScrolled || !isHomePage);
+  const showDarkText = isLight;
 
   return (
     <>
