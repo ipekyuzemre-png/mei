@@ -17,7 +17,7 @@ export default function Hero() {
       <Container size="md" className="relative z-10 text-center">
         <div className="mx-auto max-w-5xl">
           {/* Heading */}
-          <h1 className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-150 fill-mode-both mb-6 font-[Plus_Jakarta_Sans] text-[clamp(2.5rem,5vw,5.5rem)] font-bold leading-[1.1] tracking-tighter text-black sm:mb-8">
+          <h1 className="animate-in fade-in slide-in-from-bottom-4 duration-500 md:duration-1000 fill-mode-both mb-6 font-[Plus_Jakarta_Sans] text-[clamp(2.5rem,5vw,5.5rem)] font-bold leading-[1.1] tracking-tighter text-black sm:mb-8">
             {siteConfig.hero.titleLine1} <br />
             <span className="bg-gradient-to-r from-black via-black/80 to-black/40 bg-clip-text text-transparent italic font-light pr-4">
               {siteConfig.hero.titleLine2}
@@ -25,12 +25,12 @@ export default function Hero() {
           </h1>
 
           {/* Description */}
-          <p className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-300 fill-mode-both mx-auto mb-10 max-w-2xl text-base leading-[1.8] text-black/60 sm:text-lg font-light tracking-wide">
+          <p className="animate-in fade-in slide-in-from-bottom-4 duration-500 delay-75 md:duration-1000 md:delay-300 fill-mode-both mx-auto mb-10 max-w-2xl text-base leading-[1.8] text-black/60 sm:text-lg font-light tracking-wide">
             {siteConfig.hero.description}
           </p>
 
           {/* CTA Buttons */}
-          <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500 fill-mode-both flex flex-col items-center justify-center gap-6 sm:flex-row sm:gap-10">
+          <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 delay-150 md:duration-1000 md:delay-500 fill-mode-both flex flex-col items-center justify-center gap-6 sm:flex-row sm:gap-10">
             <Magnetic strength={20}>
               <a href={siteConfig.hero.primaryButtonHref} className="group relative flex h-14 items-center justify-center overflow-hidden rounded-full bg-black px-10 text-base font-bold text-[#b0c1c2] transition-all duration-500 hover:scale-105 hover:shadow-[0_0_40px_rgba(0,0,0,0.3)]">
                 <span className="relative z-10 flex items-center gap-2">
