@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import Stats from "@/components/Stats";
+import WhatWeOffer from "@/components/WhatWeOffer";
 import Services from "@/components/Services";
 import Portfolio from "@/components/Portfolio";
 import About from "@/components/About";
@@ -51,7 +51,7 @@ export default function Home() {
       
       <div className="relative z-10 w-full overflow-hidden">
         <Hero />
-        <Stats />
+        <WhatWeOffer />
         <Services />
         <Portfolio />
         <About />

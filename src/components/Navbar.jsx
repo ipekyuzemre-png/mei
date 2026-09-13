@@ -126,6 +126,21 @@ export default function Navbar() {
               const isHashLink = link.href.includes('#');
               const href = (isHomePage && isHashLink) ? link.href.substring(link.href.indexOf('#')) : link.href;
               
+              if (link.name === "Ana Sayfa" && isHomePage) {
+                return (
+                  <button
+                    key={link.name}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
+                    className={`rounded-full px-4 py-2 text-sm font-medium transition-colors duration-500 ${showDarkText ? 'text-black/80 hover:bg-black/10 hover:text-black' : 'text-white hover:bg-white/20 hover:text-white'}`}
+                  >
+                    {link.name}
+                  </button>
+                );
+              }
+              
               if (isHomePage && isHashLink) {
                 return (
                   <a
@@ -195,6 +210,23 @@ export default function Navbar() {
               const isHashLink = link.href.includes('#');
               const href = (isHomePage && isHashLink) ? link.href.substring(link.href.indexOf('#')) : link.href;
               const delay = `${index * 50 + 100}ms`;
+
+              if (link.name === "Ana Sayfa" && isHomePage) {
+                return (
+                  <button
+                    key={link.name}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setMobileOpen(false);
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
+                    style={{ animationDelay: delay }}
+                    className={`text-left animate-in fade-in slide-in-from-bottom-4 duration-500 fill-mode-both rounded-2xl px-4 py-4 font-[Plus_Jakarta_Sans] text-2xl font-bold transition-all hover:pl-6 sm:text-3xl ${isLight ? 'text-black/60 hover:bg-black/5 hover:text-black' : 'text-white/60 hover:bg-white/5 hover:text-white'}`}
+                  >
+                    {link.name}
+                  </button>
+                );
+              }
 
               if (isHomePage && isHashLink) {
                 return (

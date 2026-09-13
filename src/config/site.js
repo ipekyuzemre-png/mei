@@ -37,6 +37,7 @@ export const siteConfig = {
   // ---------------------------------------------------------
   navLinks: [
     { name: "Ana Sayfa", href: "/" },
+    { name: "Ne Sunuyoruz?", href: "/#ne-sunuyoruz" },
     { name: "Hizmetlerimiz", href: "/#services" },
     { name: "Projelerimiz", href: "/#portfolio" },
     { name: "Hakkımızda", href: "/#about" },
