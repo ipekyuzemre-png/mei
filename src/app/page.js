@@ -45,7 +45,7 @@ export default function Home() {
           alt="Background" 
           fill 
           priority 
-          className="object-cover object-center opacity-60 mix-blend-luminosity animate-[pulse_20s_ease-in-out_infinite]" 
+          className="object-cover object-center opacity-60 md:mix-blend-luminosity md:animate-[pulse_20s_ease-in-out_infinite]" 
         />
       </div>
       

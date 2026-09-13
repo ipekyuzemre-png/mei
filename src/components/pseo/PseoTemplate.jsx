@@ -28,7 +28,7 @@ export default function PseoTemplate({ data }) {
           alt="Background" 
           fill 
           priority 
-          className="object-cover object-center opacity-30 mix-blend-luminosity" 
+          className="object-cover object-center opacity-30 md:mix-blend-luminosity" 
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#F4F3EE]/40 via-transparent to-[#F4F3EE]" />
       </div>

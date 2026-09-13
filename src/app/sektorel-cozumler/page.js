@@ -21,7 +21,7 @@ export default function SektorelCozumlerList() {
           alt="Background" 
           fill 
           priority 
-          className="object-cover object-center opacity-40 mix-blend-luminosity" 
+          className="object-cover object-center opacity-40 md:mix-blend-luminosity" 
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#F4F3EE] via-transparent to-[#F4F3EE]/50" />
       </div>
