@@ -2,9 +2,17 @@ import "./globals.css";
 import SmoothScroll from "@/components/shared/SmoothScroll";
 import WhatsAppButton from "@/components/shared/WhatsAppButton";
 import AnniversaryPopup from "@/components/shared/AnniversaryPopup";
+import { Plus_Jakarta_Sans } from "next/font/google";
 
 import { siteConfig } from "@/config/site";
 import Script from "next/script";
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin", "latin-ext"],
+  weight: ["300", "400", "500", "600", "700", "800"],
+  display: "swap",
+  variable: "--font-plus-jakarta-sans",
+});
 
 export const metadata = {
   metadataBase: new URL("https://www.renginyazilim.com"),
@@ -341,16 +349,9 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="tr" suppressHydrationWarning>
+    <html lang="tr" suppressHydrationWarning className={plusJakartaSans.className}>
       <head>
         <meta name="color-scheme" content="light" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        {/* eslint-disable-next-line @next/next/no-page-custom-font */}
-        <link
-          href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400&display=swap"
-          rel="stylesheet"
-        />
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-XJHV03BCQ4" strategy="afterInteractive" />
         <Script src="https://www.googletagmanager.com/gtag/js?id=AW-18378761891" strategy="afterInteractive" />
         <Script id="google-analytics" strategy="afterInteractive">

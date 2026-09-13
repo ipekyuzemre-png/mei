@@ -176,13 +176,13 @@ export default function Navbar() {
 
       <Dialog open={mobileOpen} onOpenChange={setMobileOpen}>
         <DialogContent showCloseButton={false} data-lenis-prevent className={`flex h-[100dvh] max-h-[100dvh] w-full max-w-full flex-col overflow-y-auto overscroll-contain rounded-none border-none ${isLight ? 'bg-[#F4F3EE] text-black' : 'bg-[#1a1a1a] text-white'} sm:max-w-md sm:rounded-2xl sm:h-auto sm:max-h-[90vh]`}>
-          <DialogClose className={`absolute right-5 top-5 flex h-12 w-12 items-center justify-center rounded-full border md:backdrop-blur-md transition-all duration-500 hover:scale-110 hover:rotate-90 active:scale-95 focus:outline-none z-50 ${isLight ? 'bg-black/5 border-black/10 text-black/60 hover:bg-black/10 hover:text-black' : 'bg-white/10 border-white/20 text-white/70 hover:bg-white/20 hover:text-white'}`}>
+          <DialogClose className={`absolute right-5 top-5 flex h-12 w-12 items-center justify-center rounded-full border md:backdrop-blur-md transition-all duration-500 hover:scale-110 hover:rotate-90 active:scale-95 focus:outline-none z-50 animate-in fade-in zoom-in-75 duration-500 delay-200 fill-mode-both ${isLight ? 'bg-black/5 border-black/10 text-black/60 hover:bg-black/10 hover:text-black' : 'bg-white/10 border-white/20 text-white/70 hover:bg-white/20 hover:text-white'}`}>
             <X className="h-6 w-6" strokeWidth={1.5} />
             <span className="sr-only">Kapat</span>
           </DialogClose>
 
           <DialogHeader className="text-left">
-            <DialogTitle className="flex items-center">
+            <DialogTitle className="flex items-center animate-in fade-in slide-in-from-left-4 duration-500 delay-100 fill-mode-both">
               <Logo isLight={isLight} forceText={true} />
             </DialogTitle>
             <DialogDescription className="sr-only">
@@ -191,9 +191,10 @@ export default function Navbar() {
           </DialogHeader>
 
           <nav className="flex flex-1 flex-col justify-center gap-2 py-8" aria-label="Mobile menu">
-            {siteConfig.navLinks.map((link) => {
+            {siteConfig.navLinks.map((link, index) => {
               const isHashLink = link.href.includes('#');
               const href = (isHomePage && isHashLink) ? link.href.substring(link.href.indexOf('#')) : link.href;
+              const delay = `${index * 50 + 100}ms`;
 
               if (isHomePage && isHashLink) {
                 return (
@@ -201,7 +202,8 @@ export default function Navbar() {
                     key={link.name}
                     href={href}
                     onClick={() => setMobileOpen(false)}
-                    className={`rounded-2xl px-4 py-4 font-[Plus_Jakarta_Sans] text-2xl font-bold transition-colors hover:pl-6 sm:text-3xl ${isLight ? 'text-black/60 hover:bg-black/5 hover:text-black' : 'text-white/60 hover:bg-white/5 hover:text-white'}`}
+                    style={{ animationDelay: delay }}
+                    className={`animate-in fade-in slide-in-from-bottom-4 duration-500 fill-mode-both rounded-2xl px-4 py-4 font-[Plus_Jakarta_Sans] text-2xl font-bold transition-all hover:pl-6 sm:text-3xl ${isLight ? 'text-black/60 hover:bg-black/5 hover:text-black' : 'text-white/60 hover:bg-white/5 hover:text-white'}`}
                   >
                     {link.name}
                   </a>
@@ -213,7 +215,8 @@ export default function Navbar() {
                   key={link.name}
                   href={href}
                   onClick={() => setMobileOpen(false)}
-                  className={`rounded-2xl px-4 py-4 font-[Plus_Jakarta_Sans] text-2xl font-bold transition-colors hover:pl-6 sm:text-3xl ${isLight ? 'text-black/60 hover:bg-black/5 hover:text-black' : 'text-white/60 hover:bg-white/5 hover:text-white'}`}
+                  style={{ animationDelay: delay }}
+                  className={`animate-in fade-in slide-in-from-bottom-4 duration-500 fill-mode-both rounded-2xl px-4 py-4 font-[Plus_Jakarta_Sans] text-2xl font-bold transition-all hover:pl-6 sm:text-3xl ${isLight ? 'text-black/60 hover:bg-black/5 hover:text-black' : 'text-white/60 hover:bg-white/5 hover:text-white'}`}
                 >
                   {link.name}
                 </Link>
