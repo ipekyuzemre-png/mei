@@ -106,6 +106,7 @@ export default function Navbar() {
 
   const currentStyle = sectionStyles[activeSection] || sectionStyles.hero;
   const isLight = currentStyle.theme === "light";
+  const showDarkText = isLight && (isScrolled || !isHomePage);
 
   return (
     <>
@@ -118,9 +119,9 @@ export default function Navbar() {
       >
         <div className={`transition-all duration-500 ${isScrolled ? 'py-3' : 'py-5'}`}>
           <Container size="xl" className="flex items-center justify-between gap-4">
-            <Logo isLight={isLight && isScrolled} />
+            <Logo isLight={showDarkText} />
 
-          <nav className={`hidden items-center gap-2 rounded-full border px-2 py-1 backdrop-blur-md lg:flex transition-colors duration-500 ${isLight && isScrolled ? 'border-black/5 bg-black/[0.02]' : 'border-white/20 bg-white/[0.05]'}`} aria-label="Main menu">
+          <nav className={`hidden items-center gap-2 rounded-full border px-2 py-1 backdrop-blur-md lg:flex transition-colors duration-500 ${showDarkText ? 'border-black/5 bg-black/[0.02]' : 'border-white/20 bg-white/[0.05]'}`} aria-label="Main menu">
             {siteConfig.navLinks.map((link) => {
               const isHashLink = link.href.includes('#');
               const href = (isHomePage && isHashLink) ? link.href.substring(link.href.indexOf('#')) : link.href;
@@ -130,7 +131,7 @@ export default function Navbar() {
                   <a
                     key={link.name}
                     href={href}
-                    className={`rounded-full px-4 py-2 text-sm font-medium transition-colors duration-500 ${isLight && isScrolled ? 'text-black/80 hover:bg-black/10 hover:text-black' : 'text-white hover:bg-white/20 hover:text-white'}`}
+                    className={`rounded-full px-4 py-2 text-sm font-medium transition-colors duration-500 ${showDarkText ? 'text-black/80 hover:bg-black/10 hover:text-black' : 'text-white hover:bg-white/20 hover:text-white'}`}
                   >
                     {link.name}
                   </a>
@@ -141,7 +142,7 @@ export default function Navbar() {
                 <Link
                   key={link.name}
                   href={href}
-                  className={`rounded-full px-4 py-2 text-sm font-medium transition-colors duration-500 ${isLight && isScrolled ? 'text-black/80 hover:bg-black/10 hover:text-black' : 'text-white hover:bg-white/20 hover:text-white'}`}
+                  className={`rounded-full px-4 py-2 text-sm font-medium transition-colors duration-500 ${showDarkText ? 'text-black/80 hover:bg-black/10 hover:text-black' : 'text-white hover:bg-white/20 hover:text-white'}`}
                 >
                   {link.name}
                 </Link>
@@ -151,16 +152,16 @@ export default function Navbar() {
 
           <div className="flex items-center gap-3">
             <Magnetic strength={20}>
-              <Button variant={isLight && isScrolled ? "default-light" : "default"} className="hidden lg:inline-flex rounded-full transition-colors duration-500" render={<a href={waLink} target="_blank" rel="noopener noreferrer" />}>
+              <Button variant={showDarkText ? "default-light" : "default"} className="hidden lg:inline-flex rounded-full transition-colors duration-500" render={<a href={waLink} target="_blank" rel="noopener noreferrer" />}>
                 Teklif Al
               </Button>
             </Magnetic>
 
             <Magnetic strength={30}>
               <Button
-                variant={isLight && isScrolled ? "outline-light" : "outline"}
+                variant={showDarkText ? "outline-light" : "outline"}
                 size="icon"
-                className={`lg:hidden rounded-full backdrop-blur-md transition-colors duration-500 ${isLight && isScrolled ? 'border-black/10 bg-black/5 text-black' : 'border-white/10 bg-white/5 text-white'}`}
+                className={`lg:hidden rounded-full backdrop-blur-md transition-colors duration-500 ${showDarkText ? 'border-black/10 bg-black/5 text-black' : 'border-white/10 bg-white/5 text-white'}`}
                 onClick={() => setMobileOpen(true)}
                 aria-label="Open menu"
               >
