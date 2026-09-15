@@ -6,7 +6,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Container from "@/components/shared/Container";
 import Magnetic from "@/components/shared/Magnetic";
-import AnnouncementBar from "@/components/shared/AnnouncementBar";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -186,7 +185,6 @@ export default function Navbar() {
           </div>
         </Container>
         </div>
-        <AnnouncementBar />
       </header>
 
       <Dialog open={mobileOpen} onOpenChange={setMobileOpen}>

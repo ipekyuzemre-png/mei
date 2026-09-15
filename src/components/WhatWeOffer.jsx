@@ -39,7 +39,7 @@ export default function WhatWeOffer() {
       <div className="relative z-10 section-divider mb-14 sm:mb-20 opacity-50" />
 
       <Container ref={ref} className="relative z-10">
-        <div className="mb-14 sm:mb-20">
+        <div className="mb-14 sm:mb-20 flex flex-col items-center">
           <SectionHeader
             badge="Paket İçeriği"
             title="Her Pakette"
@@ -48,6 +48,52 @@ export default function WhatWeOffer() {
             theme="light"
             animated={false}
           />
+          <div className="mt-8 flex flex-col md:flex-row items-stretch justify-center gap-6 w-full max-w-4xl mx-auto">
+            {/* Web Tasarım Paketi */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={isInView ? { opacity: 1, scale: 1, y: 0 } : {}}
+              transition={{ type: "spring", stiffness: 200, damping: 20, delay: 0.2 }}
+              className="relative group flex-1"
+            >
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-[#788C5D]/20 to-[#788C5D]/20 blur-xl transition-all duration-500 group-hover:blur-2xl opacity-0 group-hover:opacity-100" />
+              <div className="relative flex flex-col h-full items-center text-center gap-2 rounded-3xl border border-black/5 bg-white/50 backdrop-blur-xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-500 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:border-[#788C5D]/20">
+                <span className="text-sm font-bold tracking-widest text-black/50 uppercase">
+                  Premium Web Tasarım
+                </span>
+                <div className="flex items-baseline gap-1.5 mt-2">
+                  <span className="text-5xl font-extrabold tracking-tighter text-black/80">20.000</span>
+                  <span className="text-2xl font-bold text-[#788C5D]">₺</span>
+                </div>
+                <p className="text-sm text-black/60 mt-3 leading-relaxed">
+                  Kurumsal kimliğinizi yansıtan, aşağıdaki tüm özelliklere sahip anahtar teslim premium web sitesi.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Özel Yazılım Paketi */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={isInView ? { opacity: 1, scale: 1, y: 0 } : {}}
+              transition={{ type: "spring", stiffness: 200, damping: 20, delay: 0.3 }}
+              className="relative group flex-1"
+            >
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-[#788C5D]/30 to-[#788C5D]/10 blur-xl transition-all duration-500 group-hover:blur-2xl opacity-0 group-hover:opacity-100" />
+              <div className="relative flex flex-col h-full items-center text-center gap-2 rounded-3xl border border-[#788C5D]/20 bg-gradient-to-b from-white/80 to-[#788C5D]/5 backdrop-blur-xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-500 hover:shadow-[0_12px_40px_rgb(0,0,0,0.08)] hover:border-[#788C5D]/40">
+                <span className="text-sm font-bold tracking-widest text-[#788C5D] uppercase">
+                  Özel Yazılım & Otomasyon
+                </span>
+                <div className="flex items-baseline gap-1.5 mt-2">
+                  <span className="text-5xl font-extrabold tracking-tighter text-black/90">40.000</span>
+                  <span className="text-2xl font-bold text-[#788C5D]">₺</span>
+                  <span className="text-xs font-semibold text-black/40 ml-1 -translate-y-2">'den başlayan</span>
+                </div>
+                <p className="text-sm text-black/60 mt-3 leading-relaxed">
+                  Klinikler, avukatlık büroları ve işletmelere özel süreç yönetim sistemleri (SaaS). İş akışı otomasyonları, özel müşteri panelleri, randevu ve veri entegrasyonları.
+                </p>
+              </div>
+            </motion.div>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">

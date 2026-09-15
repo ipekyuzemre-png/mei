@@ -1,7 +1,6 @@
 import "./globals.css";
 import SmoothScroll from "@/components/shared/SmoothScroll";
 import WhatsAppButton from "@/components/shared/WhatsAppButton";
-import AnniversaryPopup from "@/components/shared/AnniversaryPopup";
 import { Plus_Jakarta_Sans } from "next/font/google";
 
 import { siteConfig } from "@/config/site";
@@ -367,7 +366,6 @@ export default function RootLayout({ children }) {
       </head>
       <body suppressHydrationWarning>
         <SmoothScroll>
-          <AnniversaryPopup />
           <WhatsAppButton />
           <div className="relative z-10">
             {children}
